@@ -4183,36 +4183,42 @@ counters.forEach(counter => counterObserver.observe(counter));
 ========================================================= */
 
 const chart = document.getElementById("forestChart");
-new Chart(chart, {
-    type:"doughnut",
-    data:{
-        labels:[
-            "Forest Cover (21.71%)",
-            "Tree Cover Outside (2.91%)",
-            "Other Land Area (75.38%)"
-        ],
-        datasets:[{
-            data:[21.71, 2.91, 75.38],
-            backgroundColor:[
-                "#12a150",
-                "#c4ed68",
-                "#dce7df"
-            ],
-            borderWidth:0
-        }]
-    },
-    options:{
-        responsive:true,
-        plugins:{
-            legend:{ position:"bottom" },
-            title:{
-                display:true,
-                text:"India's Geographical Area (ISFR Data)"
+if (typeof Chart !== "undefined" && chart) {
+    try {
+        new Chart(chart, {
+            type:"doughnut",
+            data:{
+                labels:[
+                    "Forest Cover (21.71%)",
+                    "Tree Cover Outside (2.91%)",
+                    "Other Land Area (75.38%)"
+                ],
+                datasets:[{
+                    data:[21.71, 2.91, 75.38],
+                    backgroundColor:[
+                        "#12a150",
+                        "#c4ed68",
+                        "#dce7df"
+                    ],
+                    borderWidth:0
+                }]
+            },
+            options:{
+                responsive:true,
+                plugins:{
+                    legend:{ position:"bottom" },
+                    title:{
+                        display:true,
+                        text:"India's Geographical Area (ISFR Data)"
+                    }
+                },
+                cutout:"65%"
             }
-        },
-        cutout:"65%"
+        });
+    } catch(err) {
+        console.warn("Chart.js render caught:", err);
     }
-});
+}
 
 /* =========================================================
    VIDEO TAB SWITCHER
