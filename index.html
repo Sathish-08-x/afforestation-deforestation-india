@@ -1,0 +1,4833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Green India | Afforestation to Combat Deforestation (LPU CHE110 CA1)</title>
+
+<meta name="description"
+content="An interactive educational website and multimedia hub for Lovely Professional University CHE110 CA1: Afforestation to Combat Deforestation in India by Sathish Gudipudi, Subish G, and Muhammad Irfan.">
+
+<!-- ================= GOOGLE FONTS ================= -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- ================= CHART JS ================= -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
+:root {
+    --green-950:#022417;
+    --green-900:#063b24;
+    --green-800:#075d35;
+    --green-700:#08783f;
+    --green:#12a150;
+    --green-500:#22c76b;
+    --green-400:#54d98a;
+    --lime:#c4ed68;
+
+    --cream:#f4f8f2;
+    --cream-2:#eaf2e9;
+    --white:#ffffff;
+
+    --text:#14291f;
+    --muted:#667970;
+
+    --red:#e45555;
+    --orange:#f19a38;
+    --blue:#3887d6;
+
+    --shadow:0 20px 60px rgba(4,55,30,.12);
+    --small-shadow:0 8px 25px rgba(4,55,30,.08);
+
+    --radius:24px;
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html {
+    scroll-behavior:smooth;
+}
+
+body {
+    font-family:"Inter",sans-serif;
+    background:var(--cream);
+    color:var(--text);
+    line-height:1.7;
+    overflow-x:hidden;
+}
+
+body.dark {
+    --cream:#06130d;
+    --cream-2:#0a1d14;
+    --white:#10281b;
+    --text:#eaf4ed;
+    --muted:#a9bbb1;
+}
+
+h1,h2,h3,h4,h5 {
+    font-family:"Poppins",sans-serif;
+    line-height:1.2;
+}
+
+img {
+    width:100%;
+    display:block;
+}
+
+button,
+input,
+select {
+    font-family:inherit;
+}
+
+button {
+    cursor:pointer;
+}
+
+a {
+    text-decoration:none;
+    color:inherit;
+}
+
+/* =========================================================
+   SCROLL PROGRESS
+========================================================= */
+
+#scrollProgress {
+    position:fixed;
+    top:0;
+    left:0;
+    height:4px;
+    width:0%;
+    background:var(--lime);
+    z-index:3000;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:2000;
+    background:rgba(3,45,27,.92);
+    backdrop-filter:blur(18px);
+    color:#fff;
+    padding:12px 5%;
+    border-bottom:1px solid rgba(196,237,104,.15);
+}
+
+.nav-container {
+    max-width:1320px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:21px;
+    font-weight:800;
+}
+
+.logo-icon {
+    font-size:30px;
+}
+
+.lpu-pill {
+    background:rgba(196,237,104,.15);
+    border:1px solid rgba(196,237,104,.4);
+    color:var(--lime);
+    font-size:10px;
+    font-weight:800;
+    padding:3px 10px;
+    border-radius:50px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    margin-left:8px;
+}
+
+.nav-links {
+    display:flex;
+    align-items:center;
+    gap:20px;
+    list-style:none;
+}
+
+.nav-links a {
+    font-size:13px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.nav-links a:hover {
+    color:var(--lime);
+}
+
+.nav-links a.highlight-link {
+    color:var(--lime);
+    background:rgba(196,237,104,.15);
+    padding:6px 14px;
+    border-radius:20px;
+    border:1px solid rgba(196,237,104,.3);
+}
+
+.nav-actions {
+    display:flex;
+    gap:8px;
+}
+
+.icon-btn {
+    border:0;
+    background:rgba(255,255,255,.12);
+    color:#fff;
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    font-size:18px;
+    transition:.3s;
+}
+
+.icon-btn:hover {
+    background:rgba(255,255,255,.25);
+}
+
+.menu-btn {
+    display:none;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    color:white;
+    background:
+        linear-gradient(90deg,
+        rgba(1,31,18,.96),
+        rgba(2,49,28,.75),
+        rgba(2,49,28,.40)),
+        url("https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=2200&q=90")
+        center/cover;
+}
+
+.hero-content {
+    width:90%;
+    max-width:1250px;
+    margin:auto;
+    padding-top:100px;
+    padding-bottom:60px;
+}
+
+.hero-tag {
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 18px;
+    border:1px solid rgba(196,237,104,.5);
+    background:rgba(196,237,104,.15);
+    color:var(--lime);
+    border-radius:50px;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:1px;
+    margin-bottom:22px;
+    animation:heroDropIn .8s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+.student-credit-badge {
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:6px 14px;
+    border-radius:20px;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.2);
+    color:#e2ece5;
+    font-size:12px;
+    margin-bottom:20px;
+    margin-left:10px;
+    opacity:0;
+    animation:heroDropIn .8s cubic-bezier(.16,1,.3,1) .15s forwards;
+}
+
+.hero h1 {
+    font-size:clamp(44px,6.5vw,84px);
+    max-width:1050px;
+    margin-bottom:22px;
+    opacity:0;
+    animation:heroSlideUp .9s cubic-bezier(.16,1,.3,1) .25s forwards;
+}
+
+.hero h1 span {
+    background:linear-gradient(120deg,#c4ed68 0%,#54d98a 40%,#ffffff 75%,#c4ed68 100%);
+    background-size:200% auto;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:textShimmer 6s linear infinite;
+}
+
+.hero-description {
+    max-width:760px;
+    color:#d9e9df;
+    font-size:18px;
+    margin-bottom:32px;
+    opacity:0;
+    animation:heroSlideUp .9s cubic-bezier(.16,1,.3,1) .4s forwards;
+}
+
+.hero-buttons {
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+    opacity:0;
+    animation:heroSlideUp .9s cubic-bezier(.16,1,.3,1) .55s forwards;
+}
+
+.btn {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:14px 24px;
+    border-radius:14px;
+    font-weight:800;
+    border:0;
+    transition:.3s;
+    font-size:14px;
+}
+
+.btn-primary {
+    background:var(--green-500);
+    color:#063b24;
+}
+
+.btn-primary:hover {
+    transform:translateY(-4px);
+    background:var(--lime);
+    box-shadow:0 12px 30px rgba(196,237,104,.3);
+}
+
+.btn-video {
+    background:linear-gradient(135deg,#f59e0b,#d97706);
+    color:#fff;
+    box-shadow:0 8px 25px rgba(245,158,11,.3);
+    animation:pulseGlow 3.5s ease-in-out infinite;
+}
+
+.btn-video:hover {
+    transform:translateY(-4px);
+    background:linear-gradient(135deg,#fbbf24,#f59e0b);
+    color:#063b24;
+}
+
+.btn-light {
+    border:1px solid rgba(255,255,255,.45);
+    color:#fff;
+    background:rgba(255,255,255,.08);
+}
+
+.btn-light:hover {
+    background:#fff;
+    color:var(--green-900);
+    transform:translateY(-4px);
+}
+
+.hero-mini-stats {
+    display:flex;
+    gap:40px;
+    margin-top:50px;
+    flex-wrap:wrap;
+    opacity:0;
+    animation:heroSlideUp .9s cubic-bezier(.16,1,.3,1) .7s forwards;
+}
+
+.hero-mini-stats div {
+    border-left:2px solid var(--lime);
+    padding-left:15px;
+}
+
+.hero-mini-stats strong {
+    display:block;
+    font-size:24px;
+}
+
+.hero-mini-stats span {
+    font-size:12px;
+    color:#b9ccc1;
+}
+
+/* floating leaves */
+
+.leaf {
+    position:absolute;
+    opacity:.2;
+    animation:floatLeaf 8s ease-in-out infinite;
+    pointer-events:none;
+}
+
+.leaf.one {
+    right:7%;
+    top:25%;
+    font-size:80px;
+}
+
+.leaf.two {
+    right:15%;
+    bottom:20%;
+    font-size:55px;
+    animation-delay:2s;
+}
+
+@keyframes heroDropIn {
+    from { opacity:0; transform:translateY(-22px) scale(.96); }
+    to { opacity:1; transform:translateY(0) scale(1); }
+}
+
+@keyframes heroSlideUp {
+    from { opacity:0; transform:translateY(32px); }
+    to { opacity:1; transform:translateY(0); }
+}
+
+@keyframes textShimmer {
+    0% { background-position:0% center; }
+    100% { background-position:200% center; }
+}
+
+@keyframes pulseGlow {
+    0%,100% { box-shadow:0 0 15px rgba(245,158,11,.35); transform:translateY(0); }
+    50% { box-shadow:0 0 32px rgba(251,191,36,.65); transform:translateY(-2px); }
+}
+
+@keyframes floatLeaf {
+    0%,100% {transform:translateY(0) rotate(0);}
+    50% {transform:translateY(-25px) rotate(8deg);}
+}
+
+/* =========================================================
+   COMMON SECTIONS
+========================================================= */
+
+section {
+    padding:100px 5%;
+}
+
+.container {
+    max-width:1250px;
+    margin:auto;
+}
+
+.section-heading {
+    text-align:center;
+    max-width:820px;
+    margin:0 auto 55px;
+}
+
+.section-label {
+    color:var(--green);
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.section-heading h2 {
+    color:var(--green-900);
+    font-size:clamp(31px,4vw,50px);
+    margin:9px 0 14px;
+}
+
+body.dark .section-heading h2 {
+    color:var(--lime);
+}
+
+.section-heading p {
+    color:var(--muted);
+}
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.stat-section {
+    margin-top:-65px;
+    position:relative;
+    z-index:10;
+    padding-top:0;
+}
+
+.stats-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.stat-card {
+    background:var(--white);
+    border-radius:var(--radius);
+    padding:28px 20px;
+    text-align:center;
+    box-shadow:var(--shadow);
+    transition:.3s;
+}
+
+.stat-card:hover {
+    transform:translateY(-6px);
+}
+
+.stat-icon {
+    font-size:31px;
+    margin-bottom:5px;
+}
+
+.counter {
+    color:var(--green);
+    font-size:31px;
+    font-family:"Poppins";
+    font-weight:800;
+}
+
+.stat-card p {
+    color:var(--muted);
+    font-size:12px;
+}
+
+/* =========================================================
+   NEW FEATURE 1: VIDEO & SOCIAL REEL HUB
+========================================================= */
+
+.video-hub-section {
+    background:linear-gradient(180deg, var(--green-950) 0%, #031c13 100%);
+    color:#fff;
+    position:relative;
+}
+
+.video-tabs {
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-bottom:40px;
+    flex-wrap:wrap;
+}
+
+.v-tab-btn {
+    padding:12px 24px;
+    border-radius:50px;
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.08);
+    color:#d0e2d7;
+    font-weight:700;
+    font-size:14px;
+    transition:.3s;
+}
+
+.v-tab-btn.active, .v-tab-btn:hover {
+    background:var(--green-500);
+    color:#063b24;
+    border-color:var(--lime);
+    box-shadow:0 8px 25px rgba(34,199,107,.3);
+}
+
+.video-container-card {
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:30px;
+    padding:35px;
+    backdrop-filter:blur(10px);
+}
+
+.video-layout-horizontal {
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:35px;
+    align-items:center;
+}
+
+.video-wrapper-16-9 {
+    position:relative;
+    width:100%;
+    aspect-ratio:16/9;
+    background:#000;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 25px 60px rgba(0,0,0,.6);
+    border:2px solid rgba(196,237,104,.3);
+}
+
+.video-wrapper-16-9 video {
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.video-layout-vertical {
+    display:grid;
+    grid-template-columns:360px 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.video-wrapper-9-16 {
+    position:relative;
+    width:100%;
+    max-width:360px;
+    aspect-ratio:9/16;
+    background:#000;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 25px 60px rgba(0,0,0,.7);
+    border:2px solid rgba(245,158,11,.4);
+    margin:auto;
+}
+
+.video-wrapper-9-16 video {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.video-details h3 {
+    font-size:28px;
+    color:#fff;
+    margin-bottom:12px;
+}
+
+.video-meta-pills {
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.meta-pill {
+    padding:4px 12px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:700;
+}
+
+.meta-pill.green { background:rgba(34,199,107,.2); color:var(--green-400); border:1px solid rgba(34,199,107,.4); }
+.meta-pill.amber { background:rgba(245,158,11,.2); color:#fbbf24; border:1px solid rgba(245,158,11,.4); }
+.meta-pill.blue { background:rgba(56,135,214,.2); color:#93c5fd; border:1px solid rgba(56,135,214,.4); }
+
+.feature-check-list {
+    list-style:none;
+    margin:20px 0;
+}
+
+.feature-check-list li {
+    margin:10px 0;
+    font-size:14px;
+    color:#cbd5e1;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.feature-check-list li span.icon {
+    color:var(--lime);
+    font-size:16px;
+}
+
+.action-row {
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:25px;
+}
+
+.copy-caption-btn {
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.2);
+    color:#fff;
+    padding:12px 18px;
+    border-radius:12px;
+    font-size:13px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.copy-caption-btn:hover {
+    background:rgba(255,255,255,.25);
+}
+
+.reels-grid-3 {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.reel-card {
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:22px;
+    padding:20px;
+    text-align:center;
+}
+
+.reel-card video {
+    width:100%;
+    aspect-ratio:9/16;
+    border-radius:16px;
+    background:#000;
+    margin-bottom:15px;
+    object-fit:cover;
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.two-column {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about-image {
+    position:relative;
+}
+
+.about-image img {
+    height:520px;
+    object-fit:cover;
+    border-radius:30px;
+    box-shadow:var(--shadow);
+}
+
+.image-badge {
+    position:absolute;
+    right:-25px;
+    bottom:25px;
+    width:220px;
+    padding:20px;
+    background:var(--white);
+    border-radius:20px;
+    box-shadow:var(--shadow);
+}
+
+.image-badge strong {
+    font-size:30px;
+    color:var(--green);
+}
+
+.content h2 {
+    color:var(--green-900);
+    font-size:43px;
+    margin:8px 0 20px;
+}
+
+body.dark .content h2 {
+    color:var(--lime);
+}
+
+.content p {
+    color:var(--muted);
+    margin-bottom:16px;
+}
+
+.check-list {
+    list-style:none;
+    margin-top:20px;
+}
+
+.check-list li {
+    margin:13px 0;
+    font-weight:700;
+}
+
+.check-list li::before {
+    content:"✓";
+    display:inline-grid;
+    place-items:center;
+    width:25px;
+    height:25px;
+    margin-right:10px;
+    border-radius:50%;
+    color:var(--green);
+    background:#dff6e7;
+}
+
+/* =========================================================
+   NEW FEATURE 2: NATIVE VS EUCALYPTUS COMPARATOR
+========================================================= */
+
+.comparator-section {
+    background:var(--cream-2);
+}
+
+.tree-selector-bar {
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:35px;
+    flex-wrap:wrap;
+}
+
+.tree-btn {
+    padding:10px 22px;
+    border-radius:30px;
+    border:2px solid transparent;
+    background:var(--white);
+    color:var(--text);
+    font-weight:700;
+    font-size:13px;
+    box-shadow:var(--small-shadow);
+    transition:.3s;
+}
+
+.tree-btn.active {
+    border-color:var(--green);
+    background:var(--green-900);
+    color:var(--lime);
+}
+
+.comparison-box {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+    max-width:1150px;
+    margin:auto;
+}
+
+.comparison-col {
+    background:var(--white);
+    border-radius:var(--radius);
+    padding:35px;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+}
+
+.comparison-col.danger-side {
+    border-top:6px solid var(--red);
+}
+
+.comparison-col.success-side {
+    border-top:6px solid var(--green);
+}
+
+.col-tag {
+    display:inline-block;
+    padding:5px 14px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:800;
+    text-transform:uppercase;
+    margin-bottom:15px;
+}
+
+.danger-tag { background:#fee2e2; color:var(--red); }
+.success-tag { background:#dcfce7; color:var(--green); }
+
+.tree-metric-row {
+    margin:20px 0;
+    padding-bottom:15px;
+    border-bottom:1px solid #e2ece5;
+}
+
+body.dark .tree-metric-row {
+    border-bottom:1px solid #1a3928;
+}
+
+.tree-metric-title {
+    display:flex;
+    justify-content:space-between;
+    font-weight:700;
+    font-size:13px;
+    margin-bottom:6px;
+}
+
+.meter-bar {
+    height:9px;
+    border-radius:10px;
+    background:#e2ece5;
+    overflow:hidden;
+}
+
+body.dark .meter-bar {
+    background:#163222;
+}
+
+.meter-fill {
+    height:100%;
+    border-radius:10px;
+    transition:width .5s ease;
+}
+
+/* =========================================================
+   NEW FEATURE 3: JAPANESE MIYAWAKI 4-TIER BUILDER
+========================================================= */
+
+.miyawaki-interactive {
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:45px;
+    align-items:center;
+}
+
+.layers-container {
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.layer-card {
+    background:var(--white);
+    border-radius:18px;
+    padding:18px 24px;
+    box-shadow:var(--small-shadow);
+    border-left:6px solid #ccc;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.layer-card:hover, .layer-card.active {
+    transform:translateX(8px);
+    box-shadow:var(--shadow);
+}
+
+.layer-card.t1 { border-left-color:#047857; }
+.layer-card.t2 { border-left-color:#10b981; }
+.layer-card.t3 { border-left-color:#f59e0b; }
+.layer-card.t4 { border-left-color:#3b82f6; }
+
+.layer-card h4 {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:16px;
+    margin-bottom:4px;
+}
+
+.layer-card p {
+    font-size:12px;
+    color:var(--muted);
+}
+
+.layer-spotlight-box {
+    background:linear-gradient(135deg,var(--green-950),var(--green-900));
+    color:#fff;
+    border-radius:var(--radius);
+    padding:35px;
+    box-shadow:var(--shadow);
+    border:1px solid rgba(196,237,104,.2);
+}
+
+.layer-spotlight-box h3 {
+    font-size:26px;
+    color:var(--lime);
+    margin-bottom:8px;
+}
+
+.miyawaki-stats-pill-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin-top:25px;
+}
+
+.m-stat-box {
+    background:rgba(255,255,255,.08);
+    border-radius:15px;
+    padding:16px;
+    text-align:center;
+}
+
+.m-stat-box strong {
+    font-size:24px;
+    color:var(--lime);
+    display:block;
+    font-family:"Poppins";
+}
+
+.m-stat-box span {
+    font-size:11px;
+    color:#cbd5e1;
+}
+
+/* =========================================================
+   NEW FEATURE 4: DRONE & HIGH-TECH FORESTRY SIMULATOR
+========================================================= */
+
+.tech-sim-box {
+    background:var(--white);
+    border-radius:var(--radius);
+    padding:40px;
+    box-shadow:var(--shadow);
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.control-panel label {
+    display:block;
+    font-weight:700;
+    margin:15px 0 6px;
+    font-size:13px;
+}
+
+.control-panel select, .control-panel input[type=range] {
+    width:100%;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #d4e2d8;
+    background:var(--cream);
+    color:var(--text);
+}
+
+.sim-output-card {
+    background:linear-gradient(135deg,#062b1c,#0a442c);
+    color:#fff;
+    border-radius:20px;
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.sim-result-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-top:20px;
+}
+
+.sim-metric {
+    background:rgba(255,255,255,.07);
+    padding:16px;
+    border-radius:14px;
+    border-left:3px solid var(--lime);
+}
+
+.sim-metric strong {
+    font-size:24px;
+    color:var(--lime);
+    display:block;
+}
+
+.sim-metric span {
+    font-size:11px;
+    color:#b9ccc1;
+}
+
+/* =========================================================
+   CAUSES / PROBLEM CARDS
+========================================================= */
+
+.cards {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:23px;
+}
+
+.card {
+    background:var(--white);
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--small-shadow);
+    transition:.35s;
+}
+
+.card:hover {
+    transform:translateY(-9px);
+    box-shadow:var(--shadow);
+}
+
+.card-image {
+    height:220px;
+    object-fit:cover;
+}
+
+.card-body {
+    padding:26px;
+}
+
+.card-number {
+    display:grid;
+    place-items:center;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:#e2f6e9;
+    color:var(--green);
+    font-weight:900;
+    margin-bottom:15px;
+}
+
+.card h3 {
+    color:var(--green-900);
+    margin-bottom:10px;
+}
+
+body.dark .card h3 {
+    color:var(--lime);
+}
+
+.card p {
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* =========================================================
+   STATUS / CHART
+========================================================= */
+
+.dark-section {
+    background:var(--green-950);
+    color:white;
+}
+
+.dark-section .section-heading h2 {
+    color:#fff;
+}
+
+.dark-section .section-heading p {
+    color:#b7cbc0;
+}
+
+.status-grid {
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:40px;
+    align-items:center;
+}
+
+.chart-box {
+    background:#fff;
+    padding:25px;
+    border-radius:25px;
+}
+
+.data-panel {
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:25px;
+    padding:30px;
+}
+
+.data-panel h3 {
+    margin-bottom:25px;
+}
+
+.data-row {
+    margin-bottom:25px;
+}
+
+.data-title {
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:8px;
+    font-weight:700;
+}
+
+.progress {
+    height:11px;
+    border-radius:20px;
+    background:rgba(255,255,255,.12);
+    overflow:hidden;
+}
+
+.progress span {
+    display:block;
+    height:100%;
+    border-radius:20px;
+    background:linear-gradient(90deg,var(--green-500),var(--lime));
+}
+
+.campa-callout-box {
+    margin-top:25px;
+    padding:20px;
+    border-radius:18px;
+    background:rgba(255,215,0,.1);
+    border:1px solid rgba(255,215,0,.3);
+}
+
+.campa-callout-box h4 {
+    color:#ffd700;
+    font-size:15px;
+    margin-bottom:6px;
+}
+
+.campa-callout-box p {
+    font-size:12px;
+    color:#e2ece5;
+}
+
+/* =========================================================
+   STATE CARDS
+========================================================= */
+
+.state-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.state-card {
+    padding:23px;
+    border-radius:20px;
+    background:var(--white);
+    box-shadow:var(--small-shadow);
+    border-bottom:4px solid var(--green);
+    transition:.3s;
+}
+
+.state-card:hover {
+    transform:translateY(-6px);
+}
+
+.state-card .state-icon {
+    font-size:32px;
+}
+
+.state-card h3 {
+    color:var(--green-900);
+    margin:8px 0;
+}
+
+body.dark .state-card h3 {
+    color:var(--lime);
+}
+
+.state-card p {
+    color:var(--muted);
+    font-size:13px;
+}
+
+.state-percent {
+    color:var(--green);
+    font-size:25px;
+    font-weight:900;
+    font-family:"Poppins";
+}
+
+/* =========================================================
+   BEFORE / AFTER SLIDER
+========================================================= */
+
+.comparison {
+    position:relative;
+    max-width:1000px;
+    height:520px;
+    margin:auto;
+    overflow:hidden;
+    border-radius:30px;
+    box-shadow:var(--shadow);
+}
+
+.comparison img {
+    position:absolute;
+    inset:0;
+    height:100%;
+    object-fit:cover;
+}
+
+.before-image {
+    width:50%;
+    object-fit:cover;
+    object-position:left;
+    clip-path:inset(0 0 0 0);
+}
+
+.after-image {
+    width:100%;
+}
+
+.slider-line {
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:50%;
+    width:4px;
+    background:white;
+    z-index:4;
+    transform:translateX(-50%);
+}
+
+.slider-button {
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    border:3px solid white;
+    background:var(--green);
+    color:#fff;
+    z-index:5;
+    font-size:20px;
+}
+
+.slider-range {
+    position:absolute;
+    inset:0;
+    width:100%;
+    opacity:0;
+    cursor:ew-resize;
+    z-index:10;
+}
+
+.compare-label {
+    position:absolute;
+    top:20px;
+    padding:8px 13px;
+    border-radius:10px;
+    color:#fff;
+    background:rgba(0,0,0,.55);
+    font-size:12px;
+    font-weight:800;
+    z-index:6;
+}
+
+.before-label {
+    left:20px;
+}
+
+.after-label {
+    right:20px;
+}
+
+/* =========================================================
+   SOLUTION CARDS
+========================================================= */
+
+.solution-icon {
+    font-size:42px;
+    margin-bottom:12px;
+}
+
+.solution-card {
+    border-top:5px solid var(--green);
+}
+
+/* =========================================================
+   CHALLENGES
+========================================================= */
+
+.challenge-card {
+    border-left:5px solid var(--red);
+}
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.timeline {
+    max-width:900px;
+    margin:auto;
+    position:relative;
+}
+
+.timeline::before {
+    content:"";
+    position:absolute;
+    left:50%;
+    top:0;
+    bottom:0;
+    width:3px;
+    background:#cde3d3;
+    transform:translateX(-50%);
+}
+
+.timeline-item {
+    width:50%;
+    padding:15px 45px;
+    position:relative;
+}
+
+.timeline-item:nth-child(even) {
+    margin-left:50%;
+}
+
+.timeline-dot {
+    position:absolute;
+    width:18px;
+    height:18px;
+    background:var(--green);
+    border:4px solid var(--cream);
+    border-radius:50%;
+    top:30px;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    right:-9px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left:-9px;
+}
+
+.timeline-content {
+    background:var(--white);
+    border-radius:20px;
+    padding:25px;
+    box-shadow:var(--small-shadow);
+}
+
+.timeline-year {
+    color:var(--green);
+    font-weight:900;
+    font-size:13px;
+}
+
+.timeline-content h3 {
+    color:var(--green-900);
+    margin:6px 0;
+}
+
+body.dark .timeline-content h3 {
+    color:var(--lime);
+}
+
+.timeline-content p {
+    color:var(--muted);
+    font-size:13px;
+}
+
+/* =========================================================
+   WILDLIFE
+========================================================= */
+
+.wildlife-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.wildlife-card {
+    position:relative;
+    height:360px;
+    overflow:hidden;
+    border-radius:23px;
+    box-shadow:var(--shadow);
+}
+
+.wildlife-card img {
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.wildlife-card:hover img {
+    transform:scale(1.08);
+}
+
+.wildlife-info {
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    padding:30px 20px 20px;
+    color:#fff;
+    background:linear-gradient(transparent,rgba(0,0,0,.9));
+}
+
+.wildlife-info h3 {
+    font-size:22px;
+}
+
+.wildlife-info p {
+    font-size:12px;
+    color:#dce7df;
+}
+
+/* =========================================================
+   TREE PLANTING SIMULATOR
+========================================================= */
+
+.simulator {
+    background:
+        linear-gradient(120deg,rgba(2,50,29,.94),rgba(4,91,49,.85)),
+        url("https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    border-radius:35px;
+    padding:55px;
+    color:#fff;
+    text-align:center;
+}
+
+.tree-display {
+    min-height:210px;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    gap:5px;
+    flex-wrap:wrap;
+    padding:20px;
+}
+
+.tree {
+    animation:growTree .5s ease forwards;
+    transform-origin:bottom;
+    font-size:45px;
+}
+
+@keyframes growTree {
+    from {
+        transform:scale(0);
+        opacity:0;
+    }
+    to {
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.tree-counter {
+    font-size:42px;
+    color:var(--lime);
+    font-weight:900;
+    font-family:"Poppins";
+}
+
+.simulator p {
+    color:#d0e2d7;
+    margin-bottom:20px;
+}
+
+.simulator input {
+    width:100%;
+    max-width:500px;
+    padding:15px;
+    border-radius:12px;
+    border:0;
+    margin-bottom:15px;
+}
+
+/* =========================================================
+   CARBON CALCULATOR
+========================================================= */
+
+.calculator {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.calc-box {
+    background:var(--white);
+    border-radius:25px;
+    padding:30px;
+    box-shadow:var(--small-shadow);
+}
+
+.calc-input {
+    margin:20px 0;
+}
+
+.calc-input label {
+    display:block;
+    font-weight:700;
+    margin-bottom:7px;
+}
+
+.calc-input input,
+.calc-input select {
+    width:100%;
+    padding:13px;
+    border:1px solid #d4e2d8;
+    border-radius:10px;
+    background:var(--cream);
+    color:var(--text);
+}
+
+.calc-result {
+    text-align:center;
+    background:linear-gradient(135deg,var(--green-900),var(--green));
+    color:#fff;
+    border-radius:25px;
+    padding:40px;
+}
+
+.calc-result strong {
+    display:block;
+    font-size:55px;
+    color:var(--lime);
+    font-family:"Poppins";
+}
+
+/* =========================================================
+   QUIZ
+========================================================= */
+
+.quiz-box {
+    max-width:850px;
+    margin:auto;
+    background:var(--white);
+    border-radius:28px;
+    padding:35px;
+    box-shadow:var(--shadow);
+}
+
+.quiz-progress {
+    height:8px;
+    background:#dce8df;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:30px;
+}
+
+.quiz-progress span {
+    display:block;
+    height:100%;
+    width:20%;
+    background:var(--green);
+    transition:.3s;
+}
+
+.question-number {
+    color:var(--green);
+    font-size:13px;
+    font-weight:800;
+}
+
+.question {
+    font-size:25px;
+    margin:8px 0 25px;
+}
+
+.answers {
+    display:grid;
+    gap:12px;
+}
+
+.answer {
+    text-align:left;
+    padding:15px;
+    border:2px solid #dce7df;
+    border-radius:13px;
+    background:transparent;
+    color:var(--text);
+    transition:.2s;
+}
+
+.answer:hover {
+    border-color:var(--green);
+    background:#eff9f1;
+}
+
+.answer.correct {
+    background:#dff7e7;
+    border-color:var(--green);
+}
+
+.answer.wrong {
+    background:#fde2e2;
+    border-color:var(--red);
+}
+
+.quiz-controls {
+    margin-top:25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.quiz-score {
+    color:var(--green);
+    font-weight:800;
+}
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.gallery {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-auto-rows:220px;
+    gap:12px;
+}
+
+.gallery-item {
+    overflow:hidden;
+    border-radius:18px;
+    position:relative;
+    cursor:pointer;
+}
+
+.gallery-item.large {
+    grid-column:span 2;
+    grid-row:span 2;
+}
+
+.gallery-item img {
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.gallery-item:hover img {
+    transform:scale(1.08);
+}
+
+.gallery-overlay {
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:flex-end;
+    padding:20px;
+    color:#fff;
+    background:linear-gradient(transparent,rgba(0,0,0,.7));
+}
+
+/* =========================================================
+   MYTHS
+========================================================= */
+
+.myth-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.myth {
+    background:var(--white);
+    border-radius:20px;
+    padding:25px;
+    box-shadow:var(--small-shadow);
+}
+
+.myth .wrong {
+    color:var(--red);
+    font-weight:900;
+}
+
+.myth .right {
+    color:var(--green);
+    font-weight:900;
+}
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.faq {
+    max-width:900px;
+    margin:auto;
+}
+
+details {
+    background:var(--white);
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:12px;
+    box-shadow:var(--small-shadow);
+}
+
+summary {
+    cursor:pointer;
+    font-weight:800;
+    color:var(--green-900);
+}
+
+body.dark summary {
+    color:var(--lime);
+}
+
+details p {
+    color:var(--muted);
+    margin-top:12px;
+}
+
+/* =========================================================
+   REFERENCES
+========================================================= */
+
+.references {
+    background:var(--cream-2);
+}
+
+.reference-box {
+    max-width:950px;
+    margin:auto;
+    background:var(--white);
+    padding:30px;
+    border-radius:25px;
+    box-shadow:var(--small-shadow);
+}
+
+.reference-box li {
+    margin:12px 0;
+    color:var(--muted);
+}
+
+.reference-box a {
+    color:var(--green);
+    font-weight:700;
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta {
+    text-align:center;
+    color:#fff;
+    background:
+        linear-gradient(120deg,rgba(2,43,25,.93),rgba(8,103,56,.85)),
+        url("https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+}
+
+.cta h2 {
+    max-width:900px;
+    margin:auto auto 20px;
+    font-size:clamp(35px,5vw,60px);
+}
+
+.cta p {
+    max-width:700px;
+    margin:auto auto 30px;
+    color:#d4e7db;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background:#011c11;
+    color:#a9c0b2;
+    padding:60px 5% 30px;
+}
+
+.footer-grid {
+    max-width:1250px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1.5fr;
+    gap:40px;
+}
+
+footer h3 {
+    color:#fff;
+    margin-bottom:12px;
+}
+
+footer h4 {
+    color:var(--lime);
+    margin-bottom:12px;
+}
+
+footer a {
+    display:block;
+    margin:7px 0;
+    font-size:13px;
+}
+
+footer a:hover {
+    color:var(--lime);
+}
+
+.footer-team-box {
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(196,237,104,.2);
+    border-radius:16px;
+    padding:16px;
+}
+
+.footer-team-box strong {
+    color:var(--lime);
+    font-size:13px;
+    display:block;
+    margin-bottom:6px;
+}
+
+.footer-team-box p {
+    font-size:12px;
+    color:#d0e2d7;
+    margin:2px 0;
+}
+
+.footer-bottom {
+    max-width:1250px;
+    margin:40px auto 0;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.1);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+    font-size:12px;
+}
+
+/* =========================================================
+   TOP BUTTON
+========================================================= */
+
+#topBtn {
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:50px;
+    height:50px;
+    border:0;
+    border-radius:50%;
+    background:var(--green);
+    color:white;
+    font-size:20px;
+    z-index:1500;
+    display:none;
+    box-shadow:var(--shadow);
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal {
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.8);
+    z-index:5000;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal.active {
+    display:flex;
+}
+
+.modal-content {
+    max-width:900px;
+    width:100%;
+    position:relative;
+}
+
+.modal-content img {
+    max-height:85vh;
+    object-fit:contain;
+    border-radius:15px;
+}
+
+.modal-close {
+    position:absolute;
+    top:-45px;
+    right:0;
+    background:#fff;
+    border:0;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    font-size:20px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1050px) {
+
+    .nav-links {
+        gap:13px;
+    }
+
+    .stats-grid,
+    .state-grid {
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .wildlife-grid {
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns:1fr 1fr;
+    }
+
+    .video-layout-horizontal,
+    .video-layout-vertical,
+    .comparison-box,
+    .miyawaki-interactive,
+    .tech-sim-box {
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:850px) {
+
+    .menu-btn {
+        display:block;
+    }
+
+    .nav-links {
+        position:absolute;
+        top:70px;
+        right:5%;
+        width:280px;
+        background:var(--green-900);
+        padding:25px;
+        border-radius:20px;
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+        box-shadow:var(--shadow);
+    }
+
+    .nav-links.active {
+        display:flex;
+    }
+
+    .two-column,
+    .status-grid,
+    .calculator,
+    .myth-grid,
+    .reels-grid-3 {
+        grid-template-columns:1fr;
+    }
+
+    .cards {
+        grid-template-columns:1fr 1fr;
+    }
+
+    .timeline::before {
+        left:10px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even) {
+        width:100%;
+        margin-left:0;
+        padding-left:40px;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot {
+        left:1px;
+        right:auto;
+    }
+
+    .comparison {
+        height:400px;
+    }
+}
+
+@media(max-width:600px) {
+
+    section {
+        padding:70px 5%;
+    }
+
+    .hero h1 {
+        font-size:42px;
+    }
+
+    .hero-description {
+        font-size:15px;
+    }
+
+    .hero-mini-stats {
+        gap:20px;
+    }
+
+    .stats-grid,
+    .cards,
+    .state-grid,
+    .wildlife-grid {
+        grid-template-columns:1fr;
+    }
+
+    .about-image img {
+        height:380px;
+    }
+
+    .image-badge {
+        right:10px;
+    }
+
+    .gallery {
+        grid-template-columns:1fr 1fr;
+        grid-auto-rows:160px;
+    }
+
+    .gallery-item.large {
+        grid-column:span 2;
+        grid-row:span 2;
+    }
+
+    .simulator {
+        padding:30px 15px;
+    }
+
+    .footer-grid {
+        grid-template-columns:1fr;
+    }
+
+    .comparison {
+        height:300px;
+    }
+
+    .nav-actions .theme-btn {
+        display:none;
+    }
+}
+
+/* =========================================================
+   LIVING FOREST NATURE BACKGROUND & BIOPHILIC AMBIENT GLOW
+========================================================= */
+
+#forestNatureCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.ambient-glow-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.28;
+    animation: auraFloat 22s ease-in-out infinite alternate;
+}
+
+.ambient-glow-1 {
+    top: -12%;
+    left: -10%;
+    width: 550px;
+    height: 550px;
+    background: radial-gradient(circle, rgba(18, 161, 80, 0.45) 0%, rgba(84, 217, 138, 0.15) 70%, transparent 100%);
+}
+
+.ambient-glow-2 {
+    bottom: -15%;
+    right: -10%;
+    width: 650px;
+    height: 650px;
+    background: radial-gradient(circle, rgba(196, 237, 104, 0.35) 0%, rgba(7, 93, 53, 0.15) 70%, transparent 100%);
+    animation-delay: -11s;
+}
+
+@keyframes auraFloat {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(45px, 35px) scale(1.12); }
+    100% { transform: translate(-35px, 50px) scale(0.92); }
+}
+
+header, section, footer, nav, .navbar {
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================================================
+   SCROLL ENTRANCE REVEAL ANIMATIONS
+========================================================= */
+
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cards .card {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+
+.cards.is-visible .card,
+.cards .card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cards .card:nth-child(1) { transition-delay: 0.05s; }
+.cards .card:nth-child(2) { transition-delay: 0.12s; }
+.cards .card:nth-child(3) { transition-delay: 0.19s; }
+.cards .card:nth-child(4) { transition-delay: 0.26s; }
+.cards .card:nth-child(5) { transition-delay: 0.33s; }
+.cards .card:nth-child(6) { transition-delay: 0.40s; }
+
+.card-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background: linear-gradient(135deg, #063b24, #08783f);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    display: block;
+}
+
+.card:hover .card-image {
+    transform: scale(1.08);
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- =========================================================
+     PROJECT BACKGROUND ANIMATION (LIVING FOREST ECOSYSTEM)
+========================================================= -->
+<div class="ambient-glow-orb ambient-glow-1"></div>
+<div class="ambient-glow-orb ambient-glow-2"></div>
+<canvas id="forestNatureCanvas"></canvas>
+
+<!-- =========================================================
+     SCROLL PROGRESS
+========================================================= -->
+
+<div id="scrollProgress"></div>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <a href="#home" class="logo">
+            <span class="logo-icon">🌳</span>
+            <span>Green India</span>
+            <span class="lpu-pill">LPU CHE110</span>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+
+            <li><a href="#video-hub" class="highlight-link">🎬 Project Videos</a></li>
+            <li><a href="#species-comparator">Tree Comparator</a></li>
+            <li><a href="#miyawaki-builder">Miyawaki Method</a></li>
+            <li><a href="#tech-forestry">Drone & Tech</a></li>
+            <li><a href="#status">ISFR Status</a></li>
+            <li><a href="#causes">Causes</a></li>
+            <li><a href="#quiz">Green Quiz</a></li>
+
+        </ul>
+
+        <div class="nav-actions">
+
+            <button class="icon-btn theme-btn"
+                    onclick="toggleTheme()"
+                    title="Toggle dark mode">
+                🌙
+            </button>
+
+            <button class="icon-btn menu-btn"
+                    onclick="toggleMenu()">
+                ☰
+            </button>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<header class="hero" id="home">
+
+    <div class="leaf one">🍃</div>
+    <div class="leaf two">🌿</div>
+
+    <div class="hero-content">
+
+        <div class="hero-tag">
+            🇮🇳 LPU • CHE110 ENVIRONMENTAL STUDIES • CA1 PRODUCT
+        </div>
+
+        <div class="student-credit-badge">
+            👥 Sathish Gudipudi • Subish G • Muhammad Irfan
+        </div>
+
+        <h1>
+            Afforestation to Combat
+            <span>Deforestation in India.</span>
+        </h1>
+
+        <p class="hero-description">
+            An interactive B.Tech engineering research portal investigating India's 24.6% forest cover,
+            the ecological disaster of Eucalyptus monocultures, Japanese Miyawaki micro-forests,
+            and autonomous AI drone seed-bombing.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#video-hub" class="btn btn-video">
+                ▶ Watch Project Videos (5m & 58s)
+            </a>
+
+            <a href="#species-comparator" class="btn btn-primary">
+                🔬 Native vs Eucalyptus Analyzer →
+            </a>
+
+            <a href="#quiz" class="btn btn-light">
+                🧠 Take the Green Quiz
+            </a>
+
+        </div>
+
+        <div class="hero-mini-stats">
+
+            <div>
+                <strong>24.62%</strong>
+                <span>Current Forest + Tree Cover (ISFR)</span>
+            </div>
+
+            <div>
+                <strong>33.00%</strong>
+                <span>National Forest Policy Target</span>
+            </div>
+
+            <div>
+                <strong>₹50,000+ Cr</strong>
+                <span>CAMPA Afforestation Fund</span>
+            </div>
+
+            <div>
+                <strong>05:22 Min</strong>
+                <span>Main Evaluated B.Tech Video</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     STATS
+========================================================= -->
+
+<section class="stat-section">
+
+    <div class="container">
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-icon">🌲</div>
+                <div class="counter" data-target="713789">0</div>
+                <p>Forest Cover km² (FSI Data)</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🌿</div>
+                <div class="counter" data-target="95743">0</div>
+                <p>Tree Cover km² (Outside Forests)</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🌍</div>
+                <div class="counter decimal" data-target="24.62">0</div>
+                <p>Combined Green Cover %</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">💰</div>
+                <div class="counter" data-target="50000">0</div>
+                <p>₹ Crores CAMPA Fund</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     NEW FEATURE 1: MULTIMEDIA VIDEO & SOCIAL REEL HUB
+========================================================= -->
+
+<section class="video-hub-section" id="video-hub">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label" style="color:var(--lime);">
+                Project Deliverables & Media
+            </div>
+
+            <h2>
+                Watch Our B.Tech Video & Reels
+            </h2>
+
+            <p style="color:#cbd5e1;">
+                Watch the official 05:22 academic presentation video or the viral 58-second cinematic reel created for Lovely Professional University CHE110 CA1.
+            </p>
+
+        </div>
+
+        <!-- Video Tab Controls -->
+        <div class="video-tabs">
+            <button class="v-tab-btn active" onclick="switchVideoTab('main-video')">
+                🎬 Main Evaluation Video (05:22 • 1080p)
+            </button>
+            <button class="v-tab-btn" onclick="switchVideoTab('master-reel')">
+                ⭐ Master Cinematic Short (59s • 9:16)
+            </button>
+        </div>
+
+        <!-- Video Container -->
+        <div class="video-container-card">
+
+            <!-- TAB 1: MAIN EVALUATION VIDEO -->
+            <div id="tab-main-video" class="video-view">
+                <div class="video-layout-horizontal">
+                    <div class="video-wrapper-16-9">
+                        <video controls preload="metadata">
+                            <source src="assets/Afforestation_Deforestation_LPU_CHE110_CA1.mp4" type="video/mp4">
+                            <source src="Afforestation_Deforestation_LPU_CHE110_CA1.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                    </div>
+                    <div class="video-details">
+                        <div class="video-meta-pills">
+                            <span class="meta-pill green">05:22 DURATION</span>
+                            <span class="meta-pill blue">40 PHOTO CUTS</span>
+                            <span class="meta-pill amber">NO GREEN BAR</span>
+                            <span class="meta-pill green">OFFICIAL FSI MAPS</span>
+                        </div>
+                        <h3>Main Project Video (1080p Full HD)</h3>
+                        <p style="color:#cbd5e1; font-size:14px;">
+                            Strictly calibrated between 5 and 6 minutes (05:22) for the CHE110 CA1 rubric. Explores all 10 topics with rapid photo cuts, official Forest Survey of India maps with genuine state names, and dynamic highlighted captions!
+                        </p>
+                        <ul class="feature-check-list">
+                            <li><span class="icon">✓</span> 1 single natural conversational student voice</li>
+                            <li><span class="icon">✓</span> Zero roll numbers or registration numbers</li>
+                            <li><span class="icon">✓</span> 4 real photos per topic with 0.6s crossfades</li>
+                            <li><span class="icon">✓</span> Team credits: Sathish Gudipudi, Subish G, Muhammad Irfan</li>
+                        </ul>
+                        <div class="action-row">
+                            <a href="assets/Afforestation_Deforestation_LPU_CHE110_CA1.mp4" download class="btn btn-primary">
+                                ⬇ Download Main Video (72.3 MB)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: MASTER CINEMATIC REEL -->
+            <div id="tab-master-reel" class="video-view" style="display:none;">
+                <div class="video-layout-vertical">
+                    <div class="video-wrapper-9-16">
+                        <video controls preload="metadata">
+                            <source src="assets/LPU_CHE110_Afforestation_Master_Reel.mp4" type="video/mp4">
+                            <source src="LPU_CHE110_Afforestation_Master_Reel.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                    </div>
+                    <div class="video-details">
+                        <div class="video-meta-pills">
+                            <span class="meta-pill amber">59 SECONDS (STRICTLY &lt; 60S)</span>
+                            <span class="meta-pill green">VERTICAL 9:16 (1080x1920)</span>
+                            <span class="meta-pill blue">7 DETAILED SCENES</span>
+                        </div>
+                        <h3>Cinematic Master Short Video</h3>
+                        <p style="color:#cbd5e1; font-size:14px;">
+                            The complete B.Tech project distilled into 59 high-impact seconds! Features 7 seamless crossfade scenes with glassmorphic data cards, official FSI map, the Eucalyptus groundwater crisis, Japanese Miyawaki stratification, and autonomous AI seed drones.
+                        </p>
+                        <ul class="feature-check-list">
+                            <li><span class="icon">✓</span> Dynamic ASS captions highlighting key terms in gold and cyan</li>
+                            <li><span class="icon">✓</span> Sleek student team watermark &amp; university tags</li>
+                            <li><span class="icon">✓</span> Perfect format for Instagram Reels, YouTube Shorts &amp; TikTok</li>
+                        </ul>
+                        <div class="action-row">
+                            <a href="assets/LPU_CHE110_Afforestation_Master_Reel.mp4" download class="btn btn-primary">
+                                ⬇ Download Reel (8.7 MB)
+                            </a>
+                            <button class="copy-caption-btn" onclick="copyReelCaption()">
+                                📋 Copy Social Media Caption &amp; Hashtags
+                            </button>
+                        </div>
+                        <p id="captionCopiedMsg" style="color:var(--lime); font-size:12px; margin-top:10px; display:none;">
+                            ✓ Caption copied to clipboard! Paste directly into Instagram / YouTube Shorts.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     NEW FEATURE 2: NATIVE VS EUCALYPTUS COMPARATOR
+========================================================= -->
+
+<section class="comparator-section" id="species-comparator">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Ecological Analyzer
+            </div>
+
+            <h2>
+                The Eucalyptus Trap vs Native Indian Species
+            </h2>
+
+            <p>
+                Planting the wrong tree can deplete groundwater and destroy biodiversity. Select a native species below to compare its ecological impact against commercial Eucalyptus monocultures.
+            </p>
+
+        </div>
+
+        <!-- Species Selection Buttons -->
+        <div class="tree-selector-bar">
+            <button class="tree-btn active" onclick="selectCompareSpecies('peepal')">🌿 Peepal (Sacred Fig)</button>
+            <button class="tree-btn" onclick="selectCompareSpecies('neem')">🌳 Neem (Indian Lilac)</button>
+            <button class="tree-btn" onclick="selectCompareSpecies('banyan')">🌴 Banyan (National Tree)</button>
+            <button class="tree-btn" onclick="selectCompareSpecies('khejri')">🌵 Khejri (Thar Desert Tree)</button>
+        </div>
+
+        <div class="comparison-box">
+
+            <!-- LEFT: COMMERCIAL EUCALYPTUS -->
+            <div class="comparison-col danger-side">
+                <span class="col-tag danger-tag">⚠️ Monoculture Risk</span>
+                <h3 style="font-size:24px; color:var(--red);">Eucalyptus (Nilgiri Tree)</h3>
+                <p style="font-size:13px; color:var(--muted); margin-bottom:15px;">
+                    Commercial timber species native to Australia. Favored for rapid timber harvests, but an ecological disaster for Indian water tables.
+                </p>
+
+                <div class="tree-metric-row">
+                    <div class="tree-metric-title">
+                        <span>Water Depletion</span>
+                        <span style="color:var(--red); font-weight:800;">90 Litres / Day</span>
+                    </div>
+                    <div class="meter-bar">
+                        <div class="meter-fill" style="width:95%; background:var(--red);"></div>
+                    </div>
+                </div>
+
+                <div class="tree-metric-row">
+                    <div class="tree-metric-title">
+                        <span>Groundwater Table Impact</span>
+                        <span style="color:var(--red);">Severe Drain (Dries Borewells)</span>
+                    </div>
+                    <div class="meter-bar">
+                        <div class="meter-fill" style="width:90%; background:var(--red);"></div>
+                    </div>
+                </div>
+
+                <div class="tree-metric-row">
+                    <div class="tree-metric-title">
+                        <span>Biodiversity & Bird Support</span>
+                        <span style="color:var(--red);">1 / 10 ("Green Desert")</span>
+                    </div>
+                    <div class="meter-bar">
+                        <div class="meter-fill" style="width:12%; background:var(--red);"></div>
+                    </div>
+                </div>
+
+                <div class="tree-metric-row">
+                    <div class="tree-metric-title">
+                        <span>Soil Undergrowth Inhibition</span>
+                        <span style="color:var(--red);">High (Toxic Acidic Allelopathy)</span>
+                    </div>
+                    <div class="meter-bar">
+                        <div class="meter-fill" style="width:88%; background:var(--red);"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: DYNAMIC NATIVE SPECIES -->
+            <div class="comparison-col success-side">
+                <span class="col-tag success-tag">✓ Native Keystone Species</span>
+                <h3 style="font-size:24px; color:var(--green);" id="nativeName">Peepal (Ficus religiosa)</h3>
+                <p style="font-size:13px; color:var(--muted); margin-bottom:15px;" id="nativeDesc">
+                    Deeply rooted in Indian ecology and cultural heritage. Releases continuous oxygen, supports hundreds of bird and pollinator species, and conserves soil moisture.
+                </p>
+
+                <div class="tree-metric-row">
+                    <div class="tree-metric-title">
+                        <span>Water Consumption</span>
+                        <span style="color:var(--green); font-weight:800;" id="nativeWater">12 Litres / Day</span>
+                    </div>
+                    <div class="meter-bar">
+                        <div class="meter-fill" id="nativeWaterBar" style="width:18%; background:var(--green);"></div>
+                    </div>
+                </div>
+
+                <div class="tree-metric-row">
+                    <div class="tree-metric-title">
+                        <span>Aquifer Recharge</span>
+                        <span style="color:var(--green);" id="nativeRecharge">High (Deep Root Aeration)</span>
+                    </div>
+                    <div class="meter-bar">
+                        <div class="meter-fill" id="nativeRechargeBar" style="width:85%; background:var(--green);"></div>
+                    </div>
+                </div>
+
+                <div class="tree-metric-row">
+                    <div class="tree-metric-title">
+                        <span>Biodiversity Support</span>
+                        <span style="color:var(--green);" id="nativeBio">10 / 10 (Keystone Habitat)</span>
+                    </div>
+                    <div class="meter-bar">
+                        <div class="meter-fill" id="nativeBioBar" style="width:98%; background:var(--green);"></div>
+                    </div>
+                </div>
+
+                <div class="tree-metric-row">
+                    <div class="tree-metric-title">
+                        <span>Soil Enrichment &amp; Mycorrhizae</span>
+                        <span style="color:var(--green);" id="nativeSoil">Excellent (Humus Building)</span>
+                    </div>
+                    <div class="meter-bar">
+                        <div class="meter-fill" id="nativeSoilBar" style="width:92%; background:var(--green);"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     NEW FEATURE 3: JAPANESE MIYAWAKI 4-TIER BUILDER
+========================================================= -->
+
+<section id="miyawaki-builder">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Science-Backed Innovation
+            </div>
+
+            <h2>
+                Japanese Miyawaki Method: 4-Tier Architecture
+            </h2>
+
+            <p>
+                How can Indian cities grow a 100-year forest in just 10 years? Click each ecological tier below to explore how multi-layered native planting creates self-sustaining micro-forests.
+            </p>
+
+        </div>
+
+        <div class="miyawaki-interactive">
+
+            <!-- Left: Clickable Layers -->
+            <div class="layers-container">
+
+                <div class="layer-card t1 active" onclick="spotlightTier(1)">
+                    <h4>
+                        <span>1️⃣ Canopy Tier (15m+)</span>
+                        <span style="color:var(--green); font-size:12px;">Top Sun Cover</span>
+                    </h4>
+                    <p>Dominant giants: Peepal, Banyan, Sal, and Mango protecting lower tiers.</p>
+                </div>
+
+                <div class="layer-card t2" onclick="spotlightTier(2)">
+                    <h4>
+                        <span>2️⃣ Tree Tier (5m – 15m)</span>
+                        <span style="color:#10b981; font-size:12px;">Sub-Canopy</span>
+                    </h4>
+                    <p>Hardy native species: Neem, Teak, Jamun, and Indian Rosewood.</p>
+                </div>
+
+                <div class="layer-card t3" onclick="spotlightTier(3)">
+                    <h4>
+                        <span>3️⃣ Sub-Tree &amp; Shrub Tier (2m – 5m)</span>
+                        <span style="color:#f59e0b; font-size:12px;">Mid-Level</span>
+                    </h4>
+                    <p>Medicinal fruit trees: Amla, Bel, Karonda, and Indian Coral Tree.</p>
+                </div>
+
+                <div class="layer-card t4" onclick="spotlightTier(4)">
+                    <h4>
+                        <span>4️⃣ Herb &amp; Ground Cover (&lt; 2m)</span>
+                        <span style="color:#3b82f6; font-size:12px;">Soil Blanket</span>
+                    </h4>
+                    <p>Living mulch: Tulsi, Vetiver grass, and Lemongrass locking soil moisture.</p>
+                </div>
+
+            </div>
+
+            <!-- Right: Dynamic Tier Spotlight Box -->
+            <div class="layer-spotlight-box">
+                <span class="section-label" style="color:var(--lime);" id="tierBadge">TIER 1 OF 4</span>
+                <h3 id="tierTitle">Canopy Tier (Peepal &amp; Banyan)</h3>
+                <p id="tierDesc" style="color:#cbd5e1; font-size:14px; margin-top:8px;">
+                    The top layer absorbs intense Indian solar radiation, cools the forest micro-climate by up to 5°C, and prevents high winds from eroding topsoil.
+                </p>
+
+                <div class="miyawaki-stats-pill-grid">
+                    <div class="m-stat-box">
+                        <strong>10x</strong>
+                        <span>Faster Growth Rate</span>
+                    </div>
+                    <div class="m-stat-box">
+                        <strong>30x</strong>
+                        <span>Denser Foliage Cover</span>
+                    </div>
+                    <div class="m-stat-box">
+                        <strong>100%</strong>
+                        <span>Native Biodiversity</span>
+                    </div>
+                    <div class="m-stat-box">
+                        <strong>3 Years</strong>
+                        <span>Zero Care Needed After</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     NEW FEATURE 4: DRONE SEED-BOMBING & TECH SIMULATOR
+========================================================= -->
+
+<section class="comparator-section" id="tech-forestry">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                B.Tech Green Engineering
+            </div>
+
+            <h2>
+                Autonomous AI Drones vs Traditional Planting
+            </h2>
+
+            <p>
+                In the steep cliffs of the Western Ghats and Himalayas, human planters cannot climb. Adjust the parameters below to see how engineering drones revolutionize afforestation!
+            </p>
+
+        </div>
+
+        <div class="tech-sim-box">
+
+            <div class="control-panel">
+                <h3>Restoration Project Setup</h3>
+
+                <label>Target Indian Landscape:</label>
+                <select id="simTerrain" onchange="runTechSim()">
+                    <option value="cliffs">Inaccessible Cliffs (Western Ghats)</option>
+                    <option value="himalayas">High Altitude Slopes (Himalayas)</option>
+                    <option value="plains">Degraded Scrubland (Aravalli Wall)</option>
+                </select>
+
+                <label>Restoration Method:</label>
+                <select id="simMethod" onchange="runTechSim()">
+                    <option value="drone">Autonomous AI Seed Drones + IoT Soil Sensors</option>
+                    <option value="manual">Manual Planting Drives (Standard NGO/Govt)</option>
+                </select>
+
+                <label>Planted Volume: <strong id="lblSeeds" style="color:var(--green);">50,000</strong> Seedlings/Balls</label>
+                <input type="range" id="simSeeds" min="5000" max="100000" step="5000" value="50000" oninput="runTechSim()">
+
+                <p style="font-size:12px; color:var(--muted); margin-top:15px;">
+                    *Drone payloads disperse clay-nutrient seed balls mapped with ISRO Bhuvan satellite GIS coordinates.
+                </p>
+            </div>
+
+            <div class="sim-output-card">
+                <span class="section-label" style="color:var(--lime);">PROJECTED IMPACT</span>
+                <h3 id="simMethodHeading" style="font-size:22px; margin-top:4px;">Autonomous AI Drone Deployment</h3>
+
+                <div class="sim-result-grid">
+                    <div class="sim-metric">
+                        <strong id="simSurvival">84%</strong>
+                        <span>2-Year Sapling Survival</span>
+                    </div>
+                    <div class="sim-metric">
+                        <strong id="simCost">₹ 3.50</strong>
+                        <span>Cost Per Seed Ball</span>
+                    </div>
+                    <div class="sim-metric">
+                        <strong id="simSpeed">4 Days</strong>
+                        <span>Deployment Duration</span>
+                    </div>
+                    <div class="sim-metric">
+                        <strong id="simCarbon">420 Tons</strong>
+                        <span>Est. 10-Yr CO₂ Stored</span>
+                    </div>
+                </div>
+
+                <div id="simNote" style="background:rgba(255,255,255,.08); padding:12px; border-radius:10px; margin-top:20px; font-size:12px; color:#d0e2d7;">
+                    🚀 AI Drones safely target remote vertical mountain ridges, while ground solar IoT sensors trigger automated drip irrigation only when soil moisture drops below 22%!
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="two-column">
+
+            <div class="about-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&q=90"
+                alt="Dense green forest">
+
+                <div class="image-badge">
+
+                    <strong>24.62%</strong>
+
+                    <p>
+                        India's geographical area under combined
+                        forest and tree cover according to official ISFR assessment.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="content">
+
+                <div class="section-label">
+                    Understanding the issue
+                </div>
+
+                <h2>
+                    Forests are more than just trees.
+                </h2>
+
+                <p>
+                    Forest ecosystems support biodiversity, regulate rainfall and water cycles, protect soil and store carbon.
+                    They also provide food, fuel, materials and livelihoods for millions of people across India.
+                </p>
+
+                <p>
+                    Afforestation can increase tree cover and restore degraded land, but planting commercial monocultures can create green deserts. We must protect natural, multi-tiered native forests.
+                </p>
+
+                <ul class="check-list">
+
+                    <li>Protects native wildlife habitats &amp; bird corridors</li>
+                    <li>Replenishes critical groundwater aquifers</li>
+                    <li>Prevents extreme topsoil erosion &amp; landslides</li>
+                    <li>Locks massive carbon reserves permanently</li>
+                    <li>Empowers grassroots Van Panchayats &amp; tribal livelihoods</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CAUSES
+========================================================= -->
+
+<section id="causes">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                The problem
+            </div>
+
+            <h2>
+                Why do forests face pressure?
+            </h2>
+
+            <p>
+                Deforestation and forest degradation have multiple drivers.
+                Understanding them is essential before engineering lasting restoration solutions.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <article class="card">
+
+                <img
+                class="card-image"
+                src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=85"
+                alt="Agricultural field"
+                loading="lazy"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=900&q=85';">
+
+                <div class="card-body">
+
+                    <div class="card-number">01</div>
+
+                    <h3>Agriculture &amp; Grazing</h3>
+
+                    <p>
+                        Expansion of monoculture agriculture, slash-and-burn cycles, and uncontrolled livestock grazing place relentless pressure on forest frontiers.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="card">
+
+                <img
+                class="card-image"
+                src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=85"
+                alt="Urban infrastructure"
+                loading="lazy"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=85';">
+
+                <div class="card-body">
+
+                    <div class="card-number">02</div>
+
+                    <h3>Linear Infrastructure</h3>
+
+                    <p>
+                        Highways, railway corridors, power transmission lines, and dam reservoirs sever animal migration paths and fragment contiguous ecosystems.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="card">
+
+                <img
+                class="card-image"
+                src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=900&q=85"
+                alt="Forest resources"
+                loading="lazy"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=85';">
+
+                <div class="card-body">
+
+                    <div class="card-number">03</div>
+
+                    <h3>Mining &amp; Timber Extraction</h3>
+
+                    <p>
+                        Open-cast coal and iron-ore mining across central Indian forests (Jharkhand, Odisha, MP) permanently strips primary forest cover.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="card">
+
+                <img
+                class="card-image"
+                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85"
+                alt="Forest fire"
+                loading="lazy"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=85';">
+
+                <div class="card-body">
+
+                    <div class="card-number">04</div>
+
+                    <h3>Forest Fires &amp; Heatwaves</h3>
+
+                    <p>
+                        Intensifying summer heatwaves trigger catastrophic pine needle and dry deciduous forest fires across Uttarakhand and Himachal Pradesh.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="card">
+
+                <img
+                class="card-image"
+                src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=900&q=85"
+                alt="Climate landscape"
+                loading="lazy"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=85';">
+
+                <div class="card-body">
+
+                    <div class="card-number">05</div>
+
+                    <h3>Climate Shift &amp; Drought</h3>
+
+                    <p>
+                        Erratic monsoons and prolonged summer droughts dry soil reserves, stunting natural seedling germination and forest recovery.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="card">
+
+                <img
+                class="card-image"
+                src="https://images.unsplash.com/photo-1542223616-9de9adb5e3e8?auto=format&fit=crop&w=900&q=85"
+                alt="Forest landscape"
+                loading="lazy"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=85';">
+
+                <div class="card-body">
+
+                    <div class="card-number">06</div>
+
+                    <h3>Invasive Weed Infestations</h3>
+
+                    <p>
+                        Aggressive alien species like Lantana camara and Prosopis juliflora smother native forest understory across 40% of Indian tiger reserves.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CURRENT STATUS
+========================================================= -->
+
+<section class="dark-section" id="status">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label" style="color:#c4ed68;">
+                Current status
+            </div>
+
+            <h2>
+                India's Forest &amp; Tree Cover (FSI Data)
+            </h2>
+
+            <p>
+                Official satellite assessment data by the Forest Survey of India (FSI), Ministry of Environment, Forest and Climate Change.
+            </p>
+
+        </div>
+
+
+        <div class="status-grid">
+
+            <div class="chart-box">
+
+                <canvas id="forestChart"></canvas>
+
+            </div>
+
+
+            <div class="data-panel">
+
+                <h3>
+                    National Coverage Breakdown
+                </h3>
+
+
+                <div class="data-row">
+
+                    <div class="data-title">
+                        <span>Forest Cover</span>
+                        <span>21.71%</span>
+                    </div>
+
+                    <div class="progress">
+                        <span style="width:21.71%;"></span>
+                    </div>
+
+                </div>
+
+
+                <div class="data-row">
+
+                    <div class="data-title">
+                        <span>Tree Cover (Outside Forest)</span>
+                        <span>2.91%</span>
+                    </div>
+
+                    <div class="progress">
+                        <span style="width:2.91%;"></span>
+                    </div>
+
+                </div>
+
+
+                <div class="data-row">
+
+                    <div class="data-title">
+                        <span>Combined Green Cover</span>
+                        <span>24.62%</span>
+                    </div>
+
+                    <div class="progress">
+                        <span style="width:24.62%;"></span>
+                    </div>
+
+                </div>
+
+                <div class="data-row">
+
+                    <div class="data-title">
+                        <span style="color:#fbbf24;">Target (National Forest Policy 1988)</span>
+                        <span style="color:#fbbf24;">33.00%</span>
+                    </div>
+
+                    <div class="progress">
+                        <span style="width:33%; background:var(--orange);"></span>
+                    </div>
+
+                </div>
+
+                <div class="campa-callout-box">
+                    <h4>💰 ₹50,000+ Crores CAMPA Fund Reality</h4>
+                    <p>
+                        Under the Compensatory Afforestation Fund Act (CAMPA), corporations depositing money for clearing forests have amassed over ₹50,000 Crores. Our research found much of it remains unspent or channeled into monocultures rather than ecological restoration.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     STATE HIGHLIGHTS
+========================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Official State Data
+            </div>
+
+            <h2>
+                Forest Cover Across Indian States
+            </h2>
+
+            <p>
+                Forests vary dramatically across geographic zones, from the rain-soaked Western Ghats to dry deciduous central plateaus.
+            </p>
+
+        </div>
+
+
+        <div class="state-grid">
+
+            <div class="state-card">
+                <div class="state-icon">🏔️</div>
+                <h3>Arunachal Pradesh</h3>
+                <div class="state-percent">~79.3%</div>
+                <p>
+                    Second largest forest cover in India, vital for Himalayan biodiversity and trans-boundary river catchments.
+                </p>
+            </div>
+
+
+            <div class="state-card">
+                <div class="state-icon">🌳</div>
+                <h3>Madhya Pradesh</h3>
+                <div class="state-percent">77,493 km²</div>
+                <p>
+                    Largest total forest area in India. Home to Kanha, Bandhavgarh, and crucial tiger corridors.
+                </p>
+            </div>
+
+
+            <div class="state-card">
+                <div class="state-icon">🐘</div>
+                <h3>Chhattisgarh</h3>
+                <div class="state-percent">~41.2%</div>
+                <p>
+                    Vast sal and teak forests, facing acute pressures from mining and road infrastructure.
+                </p>
+            </div>
+
+
+            <div class="state-card">
+                <div class="state-icon">🌴</div>
+                <h3>Odisha</h3>
+                <div class="state-percent">~33.5%</div>
+                <p>
+                    Leads in forest regeneration, mangroves in Bhitarkanika, and community forest rights under FRA.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     BEFORE AFTER
+========================================================= -->
+
+<section style="background:var(--cream-2);">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Visualise restoration
+            </div>
+
+            <h2>
+                From Degraded Ground to Thriving Ecosystem
+            </h2>
+
+            <p>
+                Drag the interactive slider to see how native afforestation transforms parched land into a biodiverse sanctuary.
+            </p>
+
+        </div>
+
+
+        <div class="comparison">
+
+            <img
+            class="after-image"
+            src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=90"
+            alt="Green forest">
+
+            <img
+            class="before-image"
+            id="beforeImage"
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=90"
+            alt="Dry landscape">
+
+            <span class="compare-label before-label">
+                DEGRADED LAND
+            </span>
+
+            <span class="compare-label after-label">
+                RESTORED FOREST
+            </span>
+
+            <div class="slider-line" id="sliderLine"></div>
+
+            <button class="slider-button" id="sliderButton">
+                ↔
+            </button>
+
+            <input
+                class="slider-range"
+                id="comparisonRange"
+                type="range"
+                min="0"
+                max="100"
+                value="50"
+                aria-label="Forest comparison slider">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SOLUTIONS
+========================================================= -->
+
+<section id="solutions">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                The solution
+            </div>
+
+            <h2>
+                Afforestation that Actually Lasts
+            </h2>
+
+            <p>
+                Successful restoration requires ecological planning, native polyculture species, community ownership, and modern technology.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <article class="card solution-card">
+                <div class="card-body">
+                    <div class="solution-icon">🌱</div>
+                    <h3>Native Species Selection</h3>
+                    <p>
+                        Planting Peepal, Banyan, Neem, and Jamun instead of commercial timber ensures deep water recharge and bird habitat.
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="card solution-card">
+                <div class="card-body">
+                    <div class="solution-icon">💧</div>
+                    <h3>3-Year Post-Care Irrigation</h3>
+                    <p>
+                        Mandatory 36-month watering and protective tree guards prevent the catastrophic 70% sapling mortality in summer.
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="card solution-card">
+                <div class="card-body">
+                    <div class="solution-icon">👨‍🌾</div>
+                    <h3>Van Panchayats &amp; Tribes</h3>
+                    <p>
+                        Over 12,000 Van Panchayats in Uttarakhand demonstrate that community-protected forests have the highest survival rates.
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="card solution-card">
+                <div class="card-body">
+                    <div class="solution-icon">🚁</div>
+                    <h3>AI Drones &amp; GIS Mapping</h3>
+                    <p>
+                        Seed-bombing inaccessible mountain cliffs with clay balls, tracked via ISRO Bhuvan satellite geo-tagging.
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="card solution-card">
+                <div class="card-body">
+                    <div class="solution-icon">🌿</div>
+                    <h3>Japanese Miyawaki Forests</h3>
+                    <p>
+                        4-layer multi-tier urban micro-forests growing 10x faster and 30x denser to cool Indian cities.
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="card solution-card">
+                <div class="card-body">
+                    <div class="solution-icon">🛡️</div>
+                    <h3>Great Green Aravalli Wall</h3>
+                    <p>
+                        A proposed 1,400 km green belt from Gujarat to Delhi to halt the eastward spread of the Thar Desert.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CHALLENGES
+========================================================= -->
+
+<section style="background:var(--cream-2);" id="challenges">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Critical Roadblocks
+            </div>
+
+            <h2>
+                Why Do Afforestation Drives Fail?
+            </h2>
+
+            <p>
+                Planting millions of saplings in a 1-day photo drive accomplishes little without systemic maintenance and ecological care.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card challenge-card">
+                <div class="card-body">
+                    <h3>📉 70% Sapling Mortality</h3>
+                    <p>
+                        Without irrigation during the scorching summer months (April–June), 70% of newly planted saplings wither within two years.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="card challenge-card">
+                <div class="card-body">
+                    <h3>🌲 The Eucalyptus Trap</h3>
+                    <p>
+                        Commercial monoculture plantations drink up to 90L of water per tree every day, draining wells and creating ecological green deserts.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="card challenge-card">
+                <div class="card-body">
+                    <h3>🐐 Cattle Grazing &amp; Soil Crusting</h3>
+                    <p>
+                        Unfenced plantations are quickly trampled and grazed by cattle, compacting soil and destroying tender shoots.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="card challenge-card">
+                <div class="card-body">
+                    <h3>📸 Photo-Op Bias</h3>
+                    <p>
+                        Budgets are exhausted on high-profile planting ceremonies, with zero funding allocated for 3-year survival monitoring.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="card challenge-card">
+                <div class="card-body">
+                    <h3>🔥 Wildfires &amp; Pine Needles</h3>
+                    <p>
+                        Chir pine plantations in the Himalayas drop highly inflammable resin needles, fueling recurring dry season forest fires.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="card challenge-card">
+                <div class="card-body">
+                    <h3>💸 CAMPA Misallocation</h3>
+                    <p>
+                        Compensatory funds are often redirected into unrelated administrative overheads rather than genuine community reforestation.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TIMELINE
+========================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Historic Policy Milestones
+            </div>
+
+            <h2>
+                India's Forest Policy Timeline
+            </h2>
+
+            <p>
+                Major legislative and community milestones shaping forest conservation in India.
+            </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <div class="timeline-year">1973</div>
+
+                    <h3>Chipko Movement</h3>
+
+                    <p>
+                        Gaura Devi and Himalayan village women hugged trees in Reni, Uttarakhand, establishing grassroots ecological resistance.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <div class="timeline-year">1980</div>
+
+                    <h3>Forest (Conservation) Act</h3>
+
+                    <p>
+                        Mandated Central Government clearance before any forest land could be diverted for non-forest industrial purposes.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <div class="timeline-year">1988</div>
+
+                    <h3>National Forest Policy (NFP)</h3>
+
+                    <p>
+                        Set the landmark national benchmark: 33% total geographical forest cover, and 66% in mountainous regions.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <div class="timeline-year">2016</div>
+
+                    <h3>CAMPA Act Enacted</h3>
+
+                    <p>
+                        Created the Compensatory Afforestation Fund Management and Planning Authority, unlocking ₹50,000+ Crores for reforestation.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <div class="timeline-year">2023 - Present</div>
+
+                    <h3>ISFR Assessment &amp; AI Drones</h3>
+
+                    <p>
+                        Forest Survey of India records 24.62% cover; Indian states pilot autonomous drone seed-bombing and Miyawaki urban forests.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TREE PLANTING SIMULATOR
+========================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="simulator">
+
+            <div class="section-label" style="color:#c4ed68;">
+                Interactive Activity
+            </div>
+
+            <h2 style="font-size:40px;margin:10px 0;">
+                Plant a Virtual Native Forest 🌱
+            </h2>
+
+            <p>
+                Enter the number of trees you want to plant and watch your virtual native canopy grow!
+            </p>
+
+            <input
+                id="treeInput"
+                type="number"
+                min="1"
+                max="100"
+                value="12"
+                placeholder="Number of trees">
+
+            <br>
+
+            <button class="btn btn-primary" onclick="plantTrees()">
+                🌱 Plant Native Trees
+            </button>
+
+            <div class="tree-counter" id="treeCounter">
+                0 trees
+            </div>
+
+            <div class="tree-display" id="treeDisplay"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CARBON CALCULATOR
+========================================================= -->
+
+<section style="background:var(--cream-2);">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Green Calculator
+            </div>
+
+            <h2>
+                Calculate Your Tree Offset
+            </h2>
+
+            <p>
+                Estimate how many native trees are needed annually to absorb your family or college carbon footprint.
+            </p>
+
+        </div>
+
+
+        <div class="calculator">
+
+            <div class="calc-box">
+
+                <h3>
+                    Enter Your Estimated Emissions
+                </h3>
+
+                <div class="calc-input">
+
+                    <label>
+                        Annual Household CO₂ (kg/year)
+                    </label>
+
+                    <input
+                    type="number"
+                    id="co2Input"
+                    value="1200"
+                    min="0">
+
+                </div>
+
+
+                <div class="calc-input">
+
+                    <label>
+                        CO₂ Absorbed per Mature Native Tree (kg/year)
+                    </label>
+
+                    <input
+                    type="number"
+                    id="absorptionInput"
+                    value="25"
+                    min="1">
+
+                </div>
+
+
+                <button class="btn btn-primary"
+                        onclick="calculateTrees()">
+                    Calculate Native Trees 🌳
+                </button>
+
+            </div>
+
+
+            <div class="calc-result">
+
+                <p>
+                    Required Native Trees
+                </p>
+
+                <strong id="treeResult">
+                    48
+                </strong>
+
+                <p>
+                    mature trees/year
+                </p>
+
+                <small style="color:#cce3d5;">
+                    Native species like Peepal and Neem provide life-long sequestration and support local groundwater tables!
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     QUIZ
+========================================================= -->
+
+<section id="quiz">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Test Yourself
+            </div>
+
+            <h2>
+                🌍 Green India B.Tech Quiz
+            </h2>
+
+            <p>
+                Test your knowledge on India's forest data, the Eucalyptus trap, Miyawaki method, and AI drones!
+            </p>
+
+        </div>
+
+
+        <div class="quiz-box">
+
+            <div class="quiz-progress">
+                <span id="quizProgress"></span>
+            </div>
+
+            <div class="question-number" id="questionNumber">
+                QUESTION 1 OF 5
+            </div>
+
+            <div class="question" id="questionText"></div>
+
+            <div class="answers" id="answers"></div>
+
+            <div class="quiz-controls">
+
+                <span class="quiz-score" id="quizScore">
+                    Score: 0
+                </span>
+
+                <button
+                    class="btn btn-primary"
+                    id="nextBtn"
+                    onclick="nextQuestion()"
+                    style="display:none;">
+                    Next →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     MYTH VS FACT
+========================================================= -->
+
+<section style="background:var(--cream-2);">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Scientific Reality
+            </div>
+
+            <h2>
+                Afforestation Myths vs Facts
+            </h2>
+
+        </div>
+
+
+        <div class="myth-grid">
+
+            <div class="myth">
+
+                <div class="wrong">
+                    ❌ MYTH
+                </div>
+
+                <h3>
+                    Planting Eucalyptus everywhere is great for green cover.
+                </h3>
+
+                <p class="right">
+                    ✓ FACT
+                </p>
+
+                <p style="color:var(--muted);">
+                    Eucalyptus consumes 90 litres of water daily per tree, drains aquifers, acidifies topsoil, and creates ecological "green deserts" devoid of wildlife.
+                </p>
+
+            </div>
+
+
+            <div class="myth">
+
+                <div class="wrong">
+                    ❌ MYTH
+                </div>
+
+                <h3>
+                    A plantation drive's success is judged by number of saplings put in soil.
+                </h3>
+
+                <p class="right">
+                    ✓ FACT
+                </p>
+
+                <p style="color:var(--muted);">
+                    Over 70% of saplings die within 2 years without irrigation. True success is measured by the 3-year survival rate and biodiversity health!
+                </p>
+
+            </div>
+
+
+            <div class="myth">
+
+                <div class="wrong">
+                    ❌ MYTH
+                </div>
+
+                <h3>
+                    Commercial monocultures equal natural forests.
+                </h3>
+
+                <p class="right">
+                    ✓ FACT
+                </p>
+
+                <p style="color:var(--muted);">
+                    Natural forests contain multi-tiered vegetation, fungi networks, animal habitats, and watershed protections that single-species timber plots cannot match.
+                </p>
+
+            </div>
+
+
+            <div class="myth">
+
+                <div class="wrong">
+                    ❌ MYTH
+                </div>
+
+                <h3>
+                    Engineering students cannot contribute to forestry.
+                </h3>
+
+                <p class="right">
+                    ✓ FACT
+                </p>
+
+                <p style="color:var(--muted);">
+                    Autonomous AI seed drones, ISRO satellite GIS tracking, and solar IoT soil sensors are the cutting edge of modern ecological restoration!
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     REFERENCES
+========================================================= -->
+
+<section class="references" id="references">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Academic Sources
+            </div>
+
+            <h2>
+                References &amp; Project Citations
+            </h2>
+
+            <p>
+                Cited literature and official government databases used in this Lovely Professional University CHE110 CA1 submission:
+            </p>
+
+        </div>
+
+
+        <div class="reference-box">
+
+            <ol>
+
+                <li>
+                    <a href="https://fsi.nic.in/" target="_blank">
+                        Forest Survey of India (FSI) — India State of Forest Report (ISFR)
+                    </a> (Ministry of Environment, Forest and Climate Change).
+                </li>
+
+                <li>
+                    <a href="https://moef.gov.in/" target="_blank">
+                        National Forest Policy (1988)
+                    </a> — Benchmark target of 33% total geographical coverage.
+                </li>
+
+                <li>
+                    <a href="https://parivesh.nic.in/" target="_blank">
+                        Compensatory Afforestation Fund Management and Planning Authority (CAMPA)
+                    </a> — Over ₹50,000 Crores statutory fund.
+                </li>
+
+                <li>
+                    <a href="https://bhuvan.nrsc.gov.in/" target="_blank">
+                        ISRO Bhuvan Geo-Portal
+                    </a> — Satellite geospatial monitoring of forest canopy and land degradation.
+                </li>
+
+                <li>
+                    <strong>Miyawaki, Akira (2004)</strong>: <em>Emergence of human-made forests: the Miyawaki method for native micro-ecosystem restoration</em>.
+                </li>
+
+            </ol>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <h3>🌳 Green India Portal</h3>
+
+            <p>
+                Academic project website on Afforestation to Combat Deforestation in India. Submitted for CHE110 (Environmental Studies) CA1 at Lovely Professional University.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>Project Deliverables</h4>
+
+            <a href="#video-hub">Main Video (05:22)</a>
+            <a href="#video-hub">Master Short Reel (58s)</a>
+            <a href="#species-comparator">Tree Comparator</a>
+            <a href="#miyawaki-builder">Miyawaki Method</a>
+            <a href="#tech-forestry">Drone Tech</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>Course Info</h4>
+
+            <a href="#">Course: CHE110</a>
+            <a href="#">Task: CA1 Assignment</a>
+            <a href="#">Max Marks: 100</a>
+            <a href="#">LPU, Punjab</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>B.Tech Project Group</h4>
+
+            <div class="footer-team-box">
+                <strong>Lovely Professional University</strong>
+                <p>• Sathish Gudipudi</p>
+                <p>• Subish G</p>
+                <p>• Muhammad Irfan</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>© 2026 Green India Project | Lovely Professional University CHE110 CA1</span>
+        <span>Presented by Sathish Gudipudi, Subish G, &amp; Muhammad Irfan</span>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     BACK TO TOP
+========================================================= -->
+
+<button id="topBtn"
+        onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    ↑
+</button>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+}
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+function toggleTheme() {
+    document.body.classList.toggle("dark");
+    const btn = document.querySelector(".theme-btn");
+    btn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+}
+
+/* =========================================================
+   SCROLL PROGRESS + TOP BUTTON
+========================================================= */
+
+window.addEventListener("scroll", function() {
+    const scrollTop = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const percentage = (scrollTop / height) * 100;
+    document.getElementById("scrollProgress").style.width = percentage + "%";
+
+    const topBtn = document.getElementById("topBtn");
+    if(scrollTop > 500) {
+        topBtn.style.display = "block";
+    } else {
+        topBtn.style.display = "none";
+    }
+});
+
+/* =========================================================
+   COUNTERS
+========================================================= */
+
+const counters = document.querySelectorAll(".counter");
+const counterObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseFloat(el.dataset.target);
+        const isDecimal = el.classList.contains("decimal");
+        let startTime = null;
+
+        function animate(time) {
+            if(!startTime) startTime = time;
+            const progress = Math.min((time - startTime) / 1800, 1);
+            const value = target * progress;
+            if(isDecimal) {
+                el.textContent = value.toFixed(2);
+            } else {
+                el.textContent = Math.floor(value).toLocaleString("en-IN");
+            }
+            if(progress < 1) requestAnimationFrame(animate);
+        }
+        requestAnimationFrame(animate);
+        observer.unobserve(el);
+    });
+},{ threshold:.5 });
+
+counters.forEach(counter => counterObserver.observe(counter));
+
+/* =========================================================
+   FOREST CHART
+========================================================= */
+
+const chart = document.getElementById("forestChart");
+new Chart(chart, {
+    type:"doughnut",
+    data:{
+        labels:[
+            "Forest Cover (21.71%)",
+            "Tree Cover Outside (2.91%)",
+            "Other Land Area (75.38%)"
+        ],
+        datasets:[{
+            data:[21.71, 2.91, 75.38],
+            backgroundColor:[
+                "#12a150",
+                "#c4ed68",
+                "#dce7df"
+            ],
+            borderWidth:0
+        }]
+    },
+    options:{
+        responsive:true,
+        plugins:{
+            legend:{ position:"bottom" },
+            title:{
+                display:true,
+                text:"India's Geographical Area (ISFR Data)"
+            }
+        },
+        cutout:"65%"
+    }
+});
+
+/* =========================================================
+   VIDEO TAB SWITCHER
+========================================================= */
+
+function switchVideoTab(tabName) {
+    document.getElementById("tab-main-video").style.display = "none";
+    document.getElementById("tab-master-reel").style.display = "none";
+
+    const btns = document.querySelectorAll(".v-tab-btn");
+    btns.forEach(b => b.classList.remove("active"));
+
+    if(tabName === 'main-video') {
+        document.getElementById("tab-main-video").style.display = "block";
+        btns[0].classList.add("active");
+    } else if(tabName === 'master-reel') {
+        document.getElementById("tab-master-reel").style.display = "block";
+        btns[1].classList.add("active");
+    }
+}
+
+function copyReelCaption() {
+    const caption = `Can planting trees actually DESTROY the environment? 🌲❌\n\nFor our B.Tech Environmental Studies project at Lovely Professional University (LPU), we investigated India's afforestation reality:\n\nKey Findings:\n📊 India has 24.6% green cover vs 33% target\n💰 Over ₹50,000 Crores in CAMPA funds\n💧 The Eucalyptus Trap: 1 tree drinks 90L water/day!\n📉 70% of planted saplings die without care\n🚀 Science Solutions: Japanese Miyawaki micro-forests + AI Seed Drones!\n\n💡 If you want to know more, check the bio or description!\n\nPresented by: Sathish Gudipudi • Subish G • Muhammad Irfan\nCourse: CHE110 CA1 | LPU\n\n#LPU #CHE110 #Afforestation #Deforestation #Miyawaki #SaveGroundwater #GreenIndia`;
+    navigator.clipboard.writeText(caption).then(() => {
+        const msg = document.getElementById("captionCopiedMsg");
+        msg.style.display = "block";
+        setTimeout(() => { msg.style.display = "none"; }, 4000);
+    });
+}
+
+/* =========================================================
+   NATIVE VS EUCALYPTUS SPECIES COMPARATOR
+========================================================= */
+
+const nativeSpeciesData = {
+    peepal: {
+        name: "Peepal (Ficus religiosa)",
+        desc: "Deeply rooted in Indian ecology. Keystone species providing continuous oxygen, supporting hundreds of bird and pollinator species, and recharging aquifers.",
+        water: "12 Litres / Day",
+        waterBar: "18%",
+        recharge: "High (Deep Root Aeration)",
+        rechargeBar: "88%",
+        bio: "10 / 10 (Keystone Habitat)",
+        bioBar: "98%",
+        soil: "Excellent (Humus Building)",
+        soilBar: "92%"
+    },
+    neem: {
+        name: "Neem (Azadirachta indica)",
+        desc: "Drought-hardy native medicinal marvel. Natural pest deterrent, thrives on dry rocky soils, enriches soil nitrogen and prevents fungal pathogens.",
+        water: "15 Litres / Day",
+        waterBar: "22%",
+        recharge: "Moderate-High (Water Retention)",
+        rechargeBar: "80%",
+        bio: "9 / 10 (Pollinators & Medicine)",
+        bioBar: "90%",
+        soil: "High (Antibacterial Mulch)",
+        soilBar: "95%"
+    },
+    banyan: {
+        name: "Banyan (Ficus benghalensis)",
+        desc: "India's National Tree. Expansive aerial root network creates a self-replicating forest canopy sheltering thousands of avian and mammalian species.",
+        water: "20 Litres / Day",
+        waterBar: "28%",
+        recharge: "High (Soil Stabilization)",
+        rechargeBar: "92%",
+        bio: "10 / 10 (Micro-Sanctuary)",
+        bioBar: "100%",
+        soil: "Superb (Leaf Litter Biomass)",
+        soilBar: "96%"
+    },
+    khejri: {
+        name: "Khejri (Prosopis cineraria)",
+        desc: "Sacred tree of the Bishnoi community in Rajasthan. Nitrogen-fixing roots reach 35m down to stabilize sand dunes and survive in extreme arid deserts.",
+        water: "8 Litres / Day",
+        waterBar: "10%",
+        recharge: "Maximum (Desert Hydrology)",
+        rechargeBar: "95%",
+        bio: "9 / 10 (Desert Lifeline)",
+        bioBar: "88%",
+        soil: "Nitrogen Enriching (Rhizobia)",
+        soilBar: "98%"
+    }
+};
+
+function selectCompareSpecies(speciesKey) {
+    const data = nativeSpeciesData[speciesKey];
+    if(!data) return;
+
+    document.querySelectorAll(".tree-btn").forEach(btn => btn.classList.remove("active"));
+    event.target.classList.add("active");
+
+    document.getElementById("nativeName").textContent = data.name;
+    document.getElementById("nativeDesc").textContent = data.desc;
+    document.getElementById("nativeWater").textContent = data.water;
+    document.getElementById("nativeWaterBar").style.width = data.waterBar;
+    document.getElementById("nativeRecharge").textContent = data.recharge;
+    document.getElementById("nativeRechargeBar").style.width = data.rechargeBar;
+    document.getElementById("nativeBio").textContent = data.bio;
+    document.getElementById("nativeBioBar").style.width = data.bioBar;
+    document.getElementById("nativeSoil").textContent = data.soil;
+    document.getElementById("nativeSoilBar").style.width = data.soilBar;
+}
+
+/* =========================================================
+   MIYAWAKI 4-TIER SPOTLIGHT
+========================================================= */
+
+const tierData = [
+    {
+        tier: "TIER 1 OF 4",
+        title: "Canopy Tier (Peepal & Banyan)",
+        desc: "Reaches 15 to 30 meters height. Absorbs harsh direct sunlight, buffers fierce monsoon wind gusts, and drops massive organic leaf litter to nourish the soil ecosystem below."
+    },
+    {
+        tier: "TIER 2 OF 4",
+        title: "Tree Tier (Neem, Teak & Jamun)",
+        desc: "Reaches 5 to 15 meters height. Fills the mid-story with dense timber and fruit-bearing branches, attracting seed-dispersing birds and small mammals."
+    },
+    {
+        tier: "TIER 3 OF 4",
+        title: "Sub-Tree Tier (Amla, Bel & Karonda)",
+        desc: "Reaches 2 to 5 meters height. Thrives in dappled forest shade, producing nutrient-rich berries and nectar that sustain native bee colonies."
+    },
+    {
+        tier: "TIER 4 OF 4",
+        title: "Herb & Ground Tier (Tulsi & Vetiver)",
+        desc: "Grows under 2 meters. Acts as a living root blanket, locking moisture into the topsoil, halting weed invasion, and eliminating the need for weedicides."
+    }
+];
+
+function spotlightTier(tierNum) {
+    const cards = document.querySelectorAll(".layer-card");
+    cards.forEach((c, i) => {
+        if(i === tierNum - 1) c.classList.add("active");
+        else c.classList.remove("active");
+    });
+
+    const info = tierData[tierNum - 1];
+    document.getElementById("tierBadge").textContent = info.tier;
+    document.getElementById("tierTitle").textContent = info.title;
+    document.getElementById("tierDesc").textContent = info.desc;
+}
+
+/* =========================================================
+   DRONE & HIGH-TECH FORESTRY SIMULATOR
+========================================================= */
+
+function runTechSim() {
+    const terrain = document.getElementById("simTerrain").value;
+    const method = document.getElementById("simMethod").value;
+    const seeds = parseInt(document.getElementById("simSeeds").value);
+
+    document.getElementById("lblSeeds").textContent = seeds.toLocaleString("en-IN");
+
+    let survivalRate = 85;
+    let costPerSeed = 3.50;
+    let days = Math.ceil(seeds / 12000);
+    let heading = "Autonomous AI Drone Deployment";
+    let note = "🚀 Autonomous drones disperse nutrient-coated seed balls mapped with ISRO Bhuvan satellite GIS coordinates. Solar IoT soil sensors track ground moisture!";
+
+    if(method === "manual") {
+        heading = "Manual Labor Planting Drive";
+        if(terrain === "cliffs") {
+            survivalRate = 18;
+            costPerSeed = 45.00;
+            days = Math.ceil(seeds / 800);
+            note = "⚠️ High human danger on steep mountain cliffs! Manual tree planting suffers catastrophic 82% mortality due to inaccessible terrain and lack of water delivery.";
+        } else if(terrain === "himalayas") {
+            survivalRate = 28;
+            costPerSeed = 32.00;
+            days = Math.ceil(seeds / 1200);
+            note = "⚠️ Cold winds and extreme slopes cause 72% seedling loss without IoT thermal and moisture sensing.";
+        } else {
+            survivalRate = 32;
+            costPerSeed = 18.00;
+            days = Math.ceil(seeds / 2500);
+            note = "⚠️ Typical single-day planting drive: lack of irrigation during May–June causes over 68% sapling death within 2 years.";
+        }
+    } else {
+        if(terrain === "cliffs") {
+            survivalRate = 82;
+            costPerSeed = 4.20;
+        } else if(terrain === "himalayas") {
+            survivalRate = 80;
+            costPerSeed = 4.80;
+        } else {
+            survivalRate = 89;
+            costPerSeed = 3.10;
+        }
+    }
+
+    const carbonTons = Math.round(seeds * (survivalRate / 100) * 0.012);
+
+    document.getElementById("simMethodHeading").textContent = heading;
+    document.getElementById("simSurvival").textContent = survivalRate + "%";
+    document.getElementById("simCost").textContent = "₹ " + costPerSeed.toFixed(2);
+    document.getElementById("simSpeed").textContent = days + " Days";
+    document.getElementById("simCarbon").textContent = carbonTons + " Tons";
+    document.getElementById("simNote").textContent = note;
+}
+
+/* =========================================================
+   COMPARISON SLIDER
+========================================================= */
+
+const range = document.getElementById("comparisonRange");
+const beforeImage = document.getElementById("beforeImage");
+const sliderLine = document.getElementById("sliderLine");
+const sliderButton = document.getElementById("sliderButton");
+
+function updateComparison() {
+    const value = range.value;
+    beforeImage.style.width = value + "%";
+    sliderLine.style.left = value + "%";
+    sliderButton.style.left = value + "%";
+}
+
+range.addEventListener("input", updateComparison);
+
+/* =========================================================
+   TREE PLANTING SIMULATOR
+========================================================= */
+
+function plantTrees() {
+    const input = document.getElementById("treeInput");
+    let number = parseInt(input.value);
+    if(isNaN(number) || number < 1) number = 1;
+    if(number > 100) number = 100;
+
+    const display = document.getElementById("treeDisplay");
+    display.innerHTML = "";
+
+    for(let i=0; i<number; i++) {
+        const tree = document.createElement("span");
+        tree.className = "tree";
+        tree.textContent = i % 4 === 0 ? "🌳" : i % 4 === 1 ? "🌲" : i % 4 === 2 ? "🌿" : "🌱";
+        tree.style.animationDelay = (i * .025) + "s";
+        display.appendChild(tree);
+    }
+
+    document.getElementById("treeCounter").textContent = number + (number === 1 ? " native tree" : " native trees");
+}
+
+/* =========================================================
+   CARBON CALCULATOR
+========================================================= */
+
+function calculateTrees() {
+    const co2 = parseFloat(document.getElementById("co2Input").value);
+    const absorption = parseFloat(document.getElementById("absorptionInput").value);
+    if(isNaN(co2) || isNaN(absorption) || absorption <= 0) return;
+    const result = Math.ceil(co2 / absorption);
+    document.getElementById("treeResult").textContent = result.toLocaleString("en-IN");
+}
+
+/* =========================================================
+   QUIZ
+========================================================= */
+
+const quizData = [
+    {
+        question: "What is India's official National Forest Policy 1988 target for total green cover?",
+        answers: ["20.00%", "24.62%", "33.00%", "50.00%"],
+        correct: 2
+    },
+    {
+        question: "Why are Eucalyptus monoculture plantations referred to as 'green deserts'?",
+        answers: [
+            "They look brown to satellites",
+            "They drink up to 90L water daily and eliminate bird/wildlife habitat",
+            "They cannot survive in India",
+            "They produce too much fruit"
+        ],
+        correct: 1
+    },
+    {
+        question: "How much faster do Japanese Miyawaki micro-forests grow compared to traditional plantations?",
+        answers: ["2x faster", "5x faster", "10x faster", "50x faster"],
+        correct: 2
+    },
+    {
+        question: "What is the primary cause of the 70% sapling mortality crisis in Indian tree drives?",
+        answers: [
+            "Lack of post-planting summer irrigation and monitoring",
+            "Too much rain",
+            "Birds eating all leaves",
+            "Over-fertilization"
+        ],
+        correct: 0
+    },
+    {
+        question: "Which high-tech solution allows seed-bombing steep inaccessible mountain cliffs in the Western Ghats?",
+        answers: [
+            "Bulldozers",
+            "Autonomous AI Drones with clay seed-balls & ISRO GIS tracking",
+            "Manual ladder climbing",
+            "Diesel generators"
+        ],
+        correct: 1
+    }
+];
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+function loadQuestion() {
+    const q = quizData[currentQuestion];
+    document.getElementById("questionNumber").textContent = `QUESTION ${currentQuestion + 1} OF ${quizData.length}`;
+    document.getElementById("questionText").textContent = q.question;
+    document.getElementById("quizProgress").style.width = ((currentQuestion + 1) / quizData.length * 100) + "%";
+
+    const answers = document.getElementById("answers");
+    answers.innerHTML = "";
+    answered = false;
+    document.getElementById("nextBtn").style.display = "none";
+
+    q.answers.forEach((answer, index) => {
+        const button = document.createElement("button");
+        button.className = "answer";
+        button.textContent = answer;
+        button.onclick = () => selectAnswer(button, index);
+        answers.appendChild(button);
+    });
+}
+
+function selectAnswer(button, index) {
+    if(answered) return;
+    answered = true;
+
+    const q = quizData[currentQuestion];
+    const buttons = document.querySelectorAll(".answer");
+
+    buttons.forEach((btn, i) => {
+        if(i === q.correct) btn.classList.add("correct");
+    });
+
+    if(index === q.correct) {
+        score++;
+        button.classList.add("correct");
+    } else {
+        button.classList.add("wrong");
+    }
+
+    document.getElementById("quizScore").textContent = "Score: " + score;
+    document.getElementById("nextBtn").style.display = "inline-flex";
+}
+
+function nextQuestion() {
+    currentQuestion++;
+    if(currentQuestion >= quizData.length) {
+        showQuizResult();
+        return;
+    }
+    loadQuestion();
+}
+
+function showQuizResult() {
+    document.getElementById("questionNumber").textContent = "QUIZ COMPLETE 🎉";
+    document.getElementById("questionText").textContent = `You scored ${score} out of ${quizData.length}!`;
+    document.getElementById("answers").innerHTML = `
+        <p style="color:var(--muted); font-size:15px; margin-bottom:20px;">
+            ${
+                score === quizData.length
+                ? "🏆 Flawless! You are a Certified Forest Restoration Champion!"
+                : score >= 3
+                ? "🌱 Great job! You understand India's afforestation challenges well."
+                : "🌿 Good try! Explore our B.Tech project video and simulator above to learn more."
+            }
+        </p>
+        <button class="btn btn-primary" onclick="restartQuiz()">
+            Restart Quiz
+        </button>
+    `;
+    document.getElementById("nextBtn").style.display = "none";
+}
+
+function restartQuiz() {
+    currentQuestion = 0;
+    score = 0;
+    document.getElementById("quizScore").textContent = "Score: 0";
+    loadQuestion();
+}
+
+loadQuestion();
+
+/* =========================================================
+   CLOSE MOBILE MENU WHEN LINK CLICKED
+========================================================= */
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("active");
+    });
+});
+
+/* =========================================================
+   LIVING FOREST NATURE CANVAS BACKGROUND ANIMATION
+========================================================= */
+(function initForestNatureCanvas() {
+    const canvas = document.getElementById('forestNatureCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    const leafColors = [
+        'rgba(34, 199, 107, 0.45)',
+        'rgba(84, 217, 138, 0.40)',
+        'rgba(196, 237, 104, 0.35)',
+        'rgba(18, 161, 80, 0.38)',
+        'rgba(7, 93, 53, 0.30)'
+    ];
+
+    const mouse = { x: -1000, y: -1000, active: false };
+    window.addEventListener('mousemove', e => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+        mouse.active = true;
+    }, { passive: true });
+    window.addEventListener('touchmove', e => {
+        if (e.touches && e.touches[0]) {
+            mouse.x = e.touches[0].clientX;
+            mouse.y = e.touches[0].clientY;
+            mouse.active = true;
+        }
+    }, { passive: true });
+    window.addEventListener('mouseleave', () => { mouse.active = false; });
+    window.addEventListener('touchend', () => { mouse.active = false; });
+
+    window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    }, { passive: true });
+
+    class Leaf {
+        constructor() {
+            this.reset(true);
+        }
+        reset(init = false) {
+            this.x = Math.random() * width;
+            this.y = init ? Math.random() * height : -40;
+            this.size = Math.random() * 14 + 10;
+            this.speedY = Math.random() * 0.9 + 0.6;
+            this.speedX = Math.random() * 0.6 - 0.3;
+            this.rotation = Math.random() * Math.PI * 2;
+            this.rotationSpeed = (Math.random() - 0.5) * 0.02;
+            this.sway = Math.random() * Math.PI * 2;
+            this.swaySpeed = Math.random() * 0.02 + 0.01;
+            this.flip = Math.random() * Math.PI;
+            this.flipSpeed = Math.random() * 0.03 + 0.01;
+            this.color = leafColors[Math.floor(Math.random() * leafColors.length)];
+        }
+        update() {
+            this.sway += this.swaySpeed;
+            this.flip += this.flipSpeed;
+            this.rotation += this.rotationSpeed;
+            
+            this.y += this.speedY;
+            this.x += this.speedX + Math.sin(this.sway) * 0.8;
+
+            if (mouse.active) {
+                const dx = this.x - mouse.x;
+                const dy = this.y - mouse.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 120 && dist > 0) {
+                    const force = (120 - dist) / 120;
+                    this.x += (dx / dist) * force * 3;
+                    this.y += (dy / dist) * force * 2;
+                }
+            }
+
+            if (this.y > height + 40 || this.x < -40 || this.x > width + 40) {
+                this.reset();
+            }
+        }
+        draw(ctx) {
+            ctx.save();
+            ctx.translate(this.x, this.y);
+            ctx.rotate(this.rotation);
+            const scaleY = Math.cos(this.flip);
+            ctx.scale(1, scaleY);
+            ctx.fillStyle = this.color;
+
+            ctx.beginPath();
+            ctx.moveTo(0, -this.size);
+            ctx.bezierCurveTo(this.size * 0.7, -this.size * 0.5, this.size * 0.8, this.size * 0.3, 0, this.size);
+            ctx.bezierCurveTo(-this.size * 0.8, this.size * 0.3, -this.size * 0.7, -this.size * 0.5, 0, -this.size);
+            ctx.closePath();
+            ctx.fill();
+
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.25)';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(0, -this.size * 0.8);
+            ctx.lineTo(0, this.size * 0.7);
+            ctx.stroke();
+
+            ctx.restore();
+        }
+    }
+
+    class Spore {
+        constructor() {
+            this.reset(true);
+        }
+        reset(init = false) {
+            this.x = Math.random() * width;
+            this.y = init ? Math.random() * height : height + 20;
+            this.radius = Math.random() * 2.5 + 1;
+            this.speedY = -(Math.random() * 0.5 + 0.3);
+            this.speedX = (Math.random() - 0.5) * 0.4;
+            this.alpha = Math.random() * 0.5 + 0.2;
+            this.pulse = Math.random() * Math.PI * 2;
+        }
+        update() {
+            this.pulse += 0.03;
+            this.y += this.speedY;
+            this.x += this.speedX + Math.sin(this.pulse) * 0.4;
+            if (this.y < -20) {
+                this.reset();
+            }
+        }
+        draw(ctx) {
+            const currentAlpha = Math.max(0.1, this.alpha + Math.sin(this.pulse) * 0.2);
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(196, 237, 104, ${currentAlpha})`;
+            ctx.shadowColor = 'rgba(84, 217, 138, 0.6)';
+            ctx.shadowBlur = 8;
+            ctx.fill();
+            ctx.restore();
+        }
+    }
+
+    const isMobile = window.innerWidth < 768;
+    const leafCount = isMobile ? 14 : 24;
+    const sporeCount = isMobile ? 20 : 36;
+
+    const leaves = Array.from({ length: leafCount }, () => new Leaf());
+    const spores = Array.from({ length: sporeCount }, () => new Spore());
+
+    let animationFrameId;
+    let isRunning = true;
+
+    function animate() {
+        if (!isRunning) return;
+        ctx.clearRect(0, 0, width, height);
+
+        for (let i = 0; i < spores.length; i++) {
+            spores[i].update();
+            spores[i].draw(ctx);
+        }
+
+        for (let i = 0; i < leaves.length; i++) {
+            leaves[i].update();
+            leaves[i].draw(ctx);
+        }
+
+        animationFrameId = requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            isRunning = false;
+            cancelAnimationFrame(animationFrameId);
+        } else {
+            if (!isRunning) {
+                isRunning = true;
+                animate();
+            }
+        }
+    });
+})();
+
+/* =========================================================
+   SCROLL REVEAL ENTRANCE ANIMATIONS
+========================================================= */
+(function initScrollReveal() {
+    const targets = document.querySelectorAll('.card, .section-heading, .stat-card, .comparison, .quiz-box, .video-container-card, .species-card, .tier-card, .drone-hud, .about-content, .about-image');
+    targets.forEach(el => el.classList.add('reveal-on-scroll'));
+
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.12,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        targets.forEach(el => observer.observe(el));
+    } else {
+        targets.forEach(el => el.classList.add('is-visible'));
+    }
+})();
+
+/* =========================================================
+   UNIVERSAL IMAGE ERROR GUARD & SMOOTH FALLBACK
+========================================================= */
+document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('error', function() {
+        this.onerror = null;
+        this.src = 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=85';
+    });
+});
+
+</script>
+
+</body>
+</html>
