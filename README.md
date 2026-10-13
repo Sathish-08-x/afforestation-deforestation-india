@@ -30,12 +30,12 @@ Experience the interactive research web portal live on GitHub Pages:
 ---
 
 ## 🎥 Deliverable Videos
-1. **Main Evaluation Documentary (5:41 Full HD 16:9):**  
-   Comprehensive academic evaluation covering all 10 syllabus topics with synchronized subtitles.  
-   - File: `Afforestation_Deforestation_LPU_CHE110_CA1.mp4`
-2. **2-Minute Master Short Video (Vertical 9:16 — 30 FPS CFR):**  
-   Fast-paced 40-cut short reel with cinematic background music and safe-zone captions.  
-   - File: `LPU_CHE110_Afforestation_Master_Reel.mp4`
+1. **Main Evaluation Documentary (05:14 Full HD 16:9):**  
+   Comprehensive academic evaluation covering all 10 topics with 41 sentence-synchronized photo cuts, official FSI satellite maps, and zero caption delay.  
+   - File: `assets/Afforestation_Deforestation_LPU_CHE110_CA1.mp4`
+2. **2-Minute Master Short Video (01:54 Vertical 9:16 — 30 FPS CFR):**  
+   High-retention 16-beat synchronized short reel with cinematic BGM (-15.4dB), real-time photo transitions, safe-zone captions, and student team credits.  
+   - File: `assets/LPU_CHE110_Afforestation_Master_Reel.mp4`
 
 ---
 

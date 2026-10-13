@@ -1,3 +1,9 @@
 # Root level video copies (assets/ are committed)
 Afforestation_Deforestation_LPU_CHE110_CA1.mp4
 LPU_CHE110_Afforestation_Master_Reel.mp4
+
+# Temporary build folders
+synced_main_temp/
+synced_reel_temp/
+photos/
+*.ass
